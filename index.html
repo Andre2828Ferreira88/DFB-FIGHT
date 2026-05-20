@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Douglas Fight Promotion — catálogo premium de atletas de luta, histórias, vídeos, galeria e contato comercial." />
+  <meta name="theme-color" content="#050505" />
+  <title>DFB — Douglas Fight Promotion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="site-noise" aria-hidden="true"></div>
+
+  <header class="navbar" data-navbar>
+    <a href="#inicio" class="brand brand--official" aria-label="DFB Douglas Fight Promotion">
+      <img src="assets/img/logo-dfb-navbar.png" alt="Logo DFB Douglas Fight Promotion" class="brand__logo brand__logo--official" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+      <span class="brand__fallback" aria-hidden="true">DFB</span>
+      <span class="brand__text">Douglas Fight<br>Promotion</span>
+    </a>
+
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" data-nav-menu>
+      <a href="#inicio">Home</a>
+      <a href="#atletas">Atletas</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#patrocinadores">Patrocinadores</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="nav-quick-filters" aria-label="Filtros rápidos por modalidade">
+      <button type="button" data-modality="Todos" class="nav-filter is-active">Todos</button>
+      <button type="button" data-modality="Boxe" class="nav-filter">Boxe</button>
+      <button type="button" data-modality="MMA" class="nav-filter">MMA</button>
+      <button type="button" data-modality="K1" class="nav-filter">K1</button>
+      <button type="button" data-modality="Muay Thai" class="nav-filter">Muay Thai</button>
+    </div>
+
+    <a href="https://wa.me/5511939223926" class="navbar__cta" target="_blank" rel="noopener">Falar com Douglas</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <!--
+        Vídeo recomendado para o hero:
+        assets/videos/hero-fight.mp4
+        Poster recomendado:
+        assets/img/hero-poster.jpg
+        Direção: bastidores cinematográficos de luta, atletas treinando em ringue/tatame, luvas, bandagens, saco de pancada, boxe, MMA, K1, Muay Thai e preparação física. Ambiente escuro, luz dramática, suor, foco e clima de evento profissional. Ideal 1920x1080, MP4, 10 a 20 segundos, loop suave.
+      -->
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
+        <source src="assets/videos/hero-fight.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-fallback" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-kicker">DFB — Fight Promotion</span>
+          <h1 class="hero-title">Atletas prontos para o próximo round.</h1>
+          <p class="hero-subtitle">Boxe, MMA, K1 e Muay Thai em um portfólio profissional para eventos, marcas e oportunidades comerciais.</p>
+
+          <div class="hero-actions">
+            <a href="#atletas" class="btn btn-primary">Ver atletas</a>
+            <a href="#contato" class="btn btn-secondary">Contato comercial</a>
+          </div>
+
+          <div class="hero-metrics hero-metrics--modalities" aria-label="Modalidades DFB">
+            <div><strong>Boxe</strong><span>Striking</span></div>
+            <div><strong>MMA</strong><span>Completo</span></div>
+            <div><strong>K1</strong><span>Trocação</span></div>
+            <div><strong>Muay Thai</strong><span>Combate em pé</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-3d-fighter" data-hero-3d aria-label="Lutador DFB em destaque">
+          <div class="hero-3d-fighter__ring" aria-hidden="true"></div>
+          <div class="hero-3d-fighter__glow" aria-hidden="true"></div>
+          <img src="assets/img/fighters/hero-fighter.png" alt="Lutador DFB em destaque" class="hero-3d-fighter__image" loading="eager" onerror="this.style.display='none'; this.parentElement.classList.add('is-image-missing');">
+          <div class="hero-3d-fighter__fallback" aria-hidden="true"></div>
+          <div class="hero-3d-fighter__plate">
+            <span>DFB Roster</span>
+            <strong>Boxe • MMA • K1 • Muay Thai</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="catalog-shell" id="patrocinadores">
+      <aside class="sponsors-rail sponsors-rail--left" data-sponsor-rail aria-label="Patrocinadores esquerda">
+        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-01.png" alt="Patrocinador 01"><span>Patrocinador oficial</span></a>
+        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-02.png" alt="Patrocinador 02"><span>Espaço disponível</span></a>
+      </aside>
+
+      <section class="fighters-section" id="atletas">
+        <div class="section-header reveal">
+          <span>Catálogo DFB</span>
+          <h2>Atletas representados</h2>
+          <p>Explore atletas por modalidade e abra perfis completos com história, cartel, fotos e vídeo.</p>
+        </div>
+
+        <div class="modality-filters reveal" data-modality-filters>
+          <button type="button" class="modality-filter is-active" data-modality="Todos">Todos</button>
+          <button type="button" class="modality-filter" data-modality="Boxe">Boxe</button>
+          <button type="button" class="modality-filter" data-modality="MMA">MMA</button>
+          <button type="button" class="modality-filter" data-modality="K1">K1</button>
+          <button type="button" class="modality-filter" data-modality="Muay Thai">Muay Thai</button>
+        </div>
+
+        <div class="fighters-rows" id="fightersRows" aria-live="polite"></div>
+      </section>
+
+      <aside class="sponsors-rail sponsors-rail--right" data-sponsor-rail aria-label="Patrocinadores direita">
+        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-03.png" alt="Patrocinador 03"><span>Apoio premium</span></a>
+        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-04.png" alt="Patrocinador 04"><span>Espaço disponível</span></a>
+      </aside>
+    </section>
+
+    <section class="mobile-sponsors" aria-label="Patrocinadores mobile">
+      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-01.png" alt="Patrocinador 01"><span>Patrocinador oficial</span></a>
+      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-02.png" alt="Patrocinador 02"><span>Espaço disponível</span></a>
+      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-03.png" alt="Patrocinador 03"><span>Apoio premium</span></a>
+      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-04.png" alt="Patrocinador 04"><span>Espaço disponível</span></a>
+    </section>
+
+    <section id="contato" class="contact-cta reveal">
+      <span>Contato comercial</span>
+      <h2>Quer contratar, patrocinar ou negociar um atleta DFB?</h2>
+      <p>Entre em contato para eventos, lutas, patrocínios, parcerias e oportunidades comerciais.</p>
+      <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20falar%20sobre%20uma%20oportunidade%20comercial." class="btn btn-primary" target="_blank" rel="noopener">Falar com Douglas</a>
+    </section>
+  </main>
+
+  <footer class="footer footer-pro" id="footer">
+    <!-- Vídeo ideal: academia/ringue de luta em clima dark, movimento lento, sem texto/logos, MP4 otimizado para web. -->
+    <div class="footer-video-bg" aria-hidden="true">
+      <video class="footer-pro__video footer-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+        <source src="assets/videos/footer-fight.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="footer-pro__overlay footer-overlay" aria-hidden="true"></div>
+
+    <div class="footer-pro__inner">
+      <div class="footer-pro__brand">
+        <a href="#inicio" class="footer-pro__logo" aria-label="Voltar ao início">
+          <img src="assets/img/logo-dfb-navbar.png" alt="DFB Douglas Fight Promotion">
+        </a>
+        <p>Representação profissional de atletas para eventos, marcas, academias e oportunidades no esporte de combate.</p>
+
+        <div class="footer-pro__badges" aria-label="Modalidades DFB">
+          <span>Boxe</span>
+          <span>MMA</span>
+          <span>K1</span>
+          <span>Muay Thai</span>
+        </div>
+      </div>
+
+      <div class="footer-pro__columns">
+        <div class="footer-pro__col">
+          <span class="footer-pro__label">Navegação</span>
+          <a href="#inicio">Início</a>
+          <a href="#atletas">Atletas</a>
+          <a href="#patrocinadores">Patrocinadores</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+        <div class="footer-pro__col">
+          <span class="footer-pro__label">Comercial</span>
+          <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20falar%20sobre%20patroc%C3%ADnio." target="_blank" rel="noopener">Patrocinar atleta</a>
+          <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20falar%20sobre%20evento." target="_blank" rel="noopener">Eventos e lutas</a>
+          <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20conhecer%20o%20roster." target="_blank" rel="noopener">Conhecer roster</a>
+        </div>
+
+        <div class="footer-pro__cta">
+          <span>Contato comercial</span>
+          <h2>Próximo evento, marca ou oportunidade?</h2>
+          <p>Fale com a DFB e encontre o atleta certo para sua negociação.</p>
+          <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20falar%20sobre%20uma%20oportunidade%20comercial." class="btn btn-primary" target="_blank" rel="noopener">Falar com Douglas</a>
+        </div>
+      </div>
+
+      <div class="footer-pro__bottom">
+        <p>© <span data-current-year></span> DFB — Douglas Fight Promotion. Todos os direitos reservados.</p>
+        <span>Portfólio profissional de atletas de combate.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fighter-profile-modal" id="fighterProfileModal" aria-hidden="true">
+    <div class="fighter-profile-modal__backdrop" data-close-fighter-modal></div>
+
+    <div class="fighter-profile-modal__dialog" role="dialog" aria-modal="true" aria-label="Perfil do atleta">
+      <button class="fighter-profile-modal__close" type="button" data-close-fighter-modal aria-label="Fechar perfil">×</button>
+
+      <div class="fighter-profile-modal__hero">
+        <div class="fighter-profile-modal__media">
+          <img id="fighterModalPortrait" src="" alt="">
+        </div>
+
+        <div class="fighter-profile-modal__headline">
+          <span id="fighterModalModality"></span>
+          <h2 id="fighterModalName"></h2>
+          <p id="fighterModalShortBio"></p>
+        </div>
+      </div>
+
+      <div class="fighter-profile-modal__content">
+        <div class="fighter-profile-modal__stats" id="fighterModalStats"></div>
+
+        <div class="fighter-profile-modal__story">
+          <span>História</span>
+          <p id="fighterModalStory"></p>
+        </div>
+
+        <div class="fighter-profile-modal__video" id="fighterModalVideo"></div>
+        <div class="fighter-profile-modal__gallery" id="fighterModalGallery"></div>
+
+        <div class="fighter-profile-modal__actions">
+          <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20falar%20sobre%20um%20atleta." target="_blank" rel="noopener" class="btn btn-primary">Contato comercial</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
