@@ -712,16 +712,46 @@ function initNavbar() {
   const toggle = document.querySelector(selectors.navToggle);
   const menu = document.querySelector(selectors.navMenu);
   const navbar = document.querySelector(selectors.navbar);
+  const backdrop = document.querySelector('[data-mobile-menu-backdrop]');
+
   if (!toggle || !menu) return;
 
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(open));
-    navbar?.classList.toggle('is-menu-open', open);
-  });
+  function openMenu() {
+    toggle.classList.add('is-active');
+    menu.classList.add('is-open');
+    backdrop?.classList.add('is-active');
+    document.body.classList.add('is-mobile-menu-open');
+
+    toggle.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+    navbar?.classList.add('is-menu-open');
+  }
+
+  function toggleMenu() {
+    if (menu.classList.contains('is-open')) {
+      closeMobileMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggle.addEventListener('click', toggleMenu);
+  backdrop?.addEventListener('click', closeMobileMenu);
 
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+      closeMobileMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      closeMobileMenu();
+    }
   });
 }
 
@@ -729,11 +759,20 @@ function closeMobileMenu() {
   const toggle = document.querySelector(selectors.navToggle);
   const menu = document.querySelector(selectors.navMenu);
   const navbar = document.querySelector(selectors.navbar);
+  const backdrop = document.querySelector('[data-mobile-menu-backdrop]');
+
   if (!menu) return;
+
   menu.classList.remove('is-open');
+  backdrop?.classList.remove('is-active');
+  document.body.classList.remove('is-mobile-menu-open');
+
+  toggle?.classList.remove('is-active');
   toggle?.setAttribute('aria-expanded', 'false');
+  menu.setAttribute('aria-hidden', 'true');
   navbar?.classList.remove('is-menu-open');
 }
+
 
 function initRevealAnimations() {
   const items = document.querySelectorAll('.reveal');

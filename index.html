@@ -21,17 +21,22 @@
       <span class="brand__text">Douglas Fight<br>Promotion</span>
     </a>
 
-    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menu" aria-expanded="false">
+    <button class="nav-toggle mobile-menu-toggle" type="button" data-nav-toggle data-mobile-menu-toggle aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
-    <nav class="nav-menu" data-nav-menu>
+    <nav class="nav-menu mobile-menu-panel" data-nav-menu data-mobile-menu-panel aria-hidden="true">
       <a href="#inicio">Home</a>
       <a href="#atletas">Atletas</a>
       <a href="#modalidades">Modalidades</a>
       <a href="#patrocinadores">Patrocinadores</a>
       <a href="#contato">Contato</a>
+      <a href="https://wa.me/5511939223926" class="mobile-menu-cta">Falar com Douglas</a>
+      
+
     </nav>
+
+    <div class="mobile-menu-backdrop" data-mobile-menu-backdrop aria-hidden="true"></div>
 
     <div class="nav-quick-filters" aria-label="Filtros rápidos por modalidade">
       <button type="button" data-modality="Todos" class="nav-filter is-active">Todos</button>
@@ -79,9 +84,7 @@
         </div>
 
         <aside class="hero-3d-fighter" data-hero-3d aria-label="Lutador DFB em destaque">
-          <div class="hero-3d-fighter__ring" aria-hidden="true"></div>
-          <div class="hero-3d-fighter__glow" aria-hidden="true"></div>
-          <img src="assets/img/fighters/hero-fighter.png" alt="Lutador DFB em destaque" class="hero-3d-fighter__image" loading="eager" onerror="this.style.display='none'; this.parentElement.classList.add('is-image-missing');">
+<img src="assets/img/fighters/hero-fighter.png" alt="Lutador DFB em destaque" class="hero-3d-fighter__image" loading="eager" onerror="this.style.display='none'; this.parentElement.classList.add('is-image-missing');">
           <div class="hero-3d-fighter__fallback" aria-hidden="true"></div>
           <div class="hero-3d-fighter__plate">
             <span>DFB Roster</span>
