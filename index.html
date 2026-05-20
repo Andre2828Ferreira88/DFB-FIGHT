@@ -11,7 +11,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body class="is-loading">
+  <div class="page-loader" id="pageLoader" aria-label="Carregando site" role="status">
+    <div class="page-loader__inner">
+      <div class="page-loader__brand">
+        <img src="assets/img/logo-dfb-navbar.png" alt="DFB Douglas Fight Promotion" class="page-loader__logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="page-loader__fallback-logo">DFB</span>
+        <strong>Douglas Fight Promotion</strong>
+      </div>
+
+      <div class="page-loader__progress">
+        <div class="page-loader__bar" id="pageLoaderBar"></div>
+      </div>
+
+      <div class="page-loader__meta">
+        <span>Preparando experiência</span>
+        <strong id="pageLoaderPercent">0%</strong>
+      </div>
+    </div>
+  </div>
+
   <div class="site-noise" aria-hidden="true"></div>
 
   <header class="navbar" data-navbar>
@@ -142,7 +161,7 @@
   <footer class="footer footer-pro" id="footer">
     <!-- Vídeo ideal: academia/ringue de luta em clima dark, movimento lento, sem texto/logos, MP4 otimizado para web. -->
     <div class="footer-video-bg" aria-hidden="true">
-      <video class="footer-pro__video footer-bg-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+      <video class="footer-pro__video footer-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
         <source src="assets/videos/footer-fight.mp4" type="video/mp4">
       </video>
     </div>

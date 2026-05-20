@@ -149,7 +149,7 @@ const selectors = {
 };
 
 function initApp() {
-  document.body.classList.add('is-loaded');
+  safeInit('Page loader', initPageLoader);
   safeInit('Navbar', initNavbar);
   safeInit('Hero interactions', initHeroInteractions);
   safeInit('Hero 3D fighter', initHero3DFighter);
@@ -160,6 +160,7 @@ function initApp() {
   safeInit('Sponsor animations', initSponsorAnimations);
   safeInit('Media fallbacks', initSafeMediaFallbacks);
   safeInit('Footer video', initFooterVideo);
+  safeInit('Autoplay videos', initAllAutoplayVideos);
 }
 
 function safeInit(name, fn) {
@@ -169,6 +170,156 @@ function safeInit(name, fn) {
     console.error(`Erro ao iniciar ${name}:`, error);
   }
 }
+
+function initPageLoader() {
+  const loader = document.getElementById('pageLoader');
+  const bar = document.getElementById('pageLoaderBar');
+  const percent = document.getElementById('pageLoaderPercent');
+
+  if (!loader) {
+    document.body.classList.remove('is-loading');
+    document.body.classList.add('is-loaded');
+    return;
+  }
+
+  document.body.classList.add('is-loading');
+
+  let progress = 0;
+  let isDone = false;
+
+  const setProgress = (value) => {
+    progress = Math.max(progress, Math.min(value, 100));
+
+    if (bar) {
+      bar.style.width = `${progress}%`;
+    }
+
+    if (percent) {
+      percent.textContent = `${Math.round(progress)}%`;
+    }
+  };
+
+  const fakeProgress = window.setInterval(() => {
+    if (isDone) return;
+
+    if (progress < 82) {
+      setProgress(progress + Math.random() * 9 + 3);
+      return;
+    }
+
+    if (progress < 94) {
+      setProgress(progress + Math.random() * 2);
+    }
+  }, 170);
+
+  const waitForImages = () => {
+    const images = Array.from(document.images);
+
+    if (!images.length) return Promise.resolve();
+
+    return Promise.allSettled(
+      images.map((img) => {
+        if (img.complete) return Promise.resolve();
+
+        return new Promise((resolve) => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        });
+      })
+    );
+  };
+
+  const waitForVideos = () => {
+    const videos = Array.from(document.querySelectorAll('video'));
+
+    if (!videos.length) return Promise.resolve();
+
+    return Promise.allSettled(
+      videos.map((video) => {
+        if (video.readyState >= 2) return Promise.resolve();
+
+        return new Promise((resolve) => {
+          video.addEventListener('loadeddata', resolve, { once: true });
+          video.addEventListener('canplay', resolve, { once: true });
+          video.addEventListener('error', resolve, { once: true });
+          window.setTimeout(resolve, 2500);
+        });
+      })
+    );
+  };
+
+  const finishLoading = () => {
+    if (isDone) return;
+
+    isDone = true;
+    window.clearInterval(fakeProgress);
+    setProgress(100);
+
+    window.setTimeout(() => {
+      loader.classList.add('is-hidden');
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('is-loaded');
+
+      initAllAutoplayVideos();
+    }, 420);
+
+    window.setTimeout(() => {
+      loader.remove();
+    }, 1300);
+  };
+
+  const minimumTime = new Promise((resolve) => window.setTimeout(resolve, 900));
+  const maximumTime = new Promise((resolve) => window.setTimeout(resolve, 4500));
+
+  Promise.race([
+    Promise.all([waitForImages(), waitForVideos(), minimumTime]),
+    maximumTime
+  ]).then(finishLoading).catch(finishLoading);
+}
+
+function initAllAutoplayVideos(scope = document) {
+  const root = scope instanceof Element || scope instanceof Document ? scope : document;
+  const videos = root.querySelectorAll('video');
+
+  videos.forEach((video) => {
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.autoplay = true;
+
+    video.setAttribute('muted', '');
+    video.setAttribute('loop', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('autoplay', '');
+
+    const playVideo = () => {
+      const playPromise = video.play?.();
+
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch((error) => {
+          console.warn('Autoplay bloqueado ou falhou:', error, video);
+        });
+      }
+    };
+
+    if (video.readyState >= 2) {
+      playVideo();
+    } else {
+      video.addEventListener('loadeddata', playVideo, { once: true });
+      video.addEventListener('canplay', playVideo, { once: true });
+    }
+
+    video.addEventListener('ended', () => {
+      try {
+        video.currentTime = 0;
+        video.play?.().catch?.(() => {});
+      } catch (error) {
+        console.warn('Erro ao reiniciar vídeo:', error);
+      }
+    });
+  });
+}
+
 
 document.addEventListener('DOMContentLoaded', initApp);
 
@@ -471,6 +622,8 @@ function openFighterProfile(fighterId) {
   if (video) video.innerHTML = renderFighterVideo(fighter);
   if (gallery) gallery.innerHTML = renderFighterGallery(fighter);
 
+  initAllAutoplayVideos(modal);
+
   modal.classList.add('is-open');
   document.body.classList.add('is-fighter-modal-open', 'modal-open');
 
@@ -540,7 +693,7 @@ function renderFighterVideo(fighter) {
 
   return `
     <div class="fighter-video-card">
-      <video controls playsinline preload="metadata" poster="${escapeAttr(video.poster || '')}">
+      <video controls autoplay muted loop playsinline preload="metadata" poster="${escapeAttr(video.poster || '')}">
         <source src="${escapeAttr(video.src)}" type="video/mp4">
       </video>
 
