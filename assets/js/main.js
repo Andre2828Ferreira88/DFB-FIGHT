@@ -155,6 +155,7 @@ function initApp() {
   safeInit('Hero 3D fighter', initHero3DFighter);
   safeInit('Modality filters', initModalityFilters);
   safeInit('Fighters catalog', initFightersCatalog);
+  safeInit('Amateur fighters page', initAmateurFightersPage);
   safeInit('Fighter profile modal', initFighterProfileModal);
   safeInit('Reveal animations', initRevealAnimations);
   safeInit('Sponsor animations', initSponsorAnimations);
@@ -318,6 +319,205 @@ function initAllAutoplayVideos(scope = document) {
       }
     });
   });
+}
+
+
+// ─────────────────────────────────────────────────────────────
+// Página estática de atletas amadores: amadores.html
+// Para adicionar novo atleta amador, copie um objeto abaixo e atualize id, textos e caminhos das mídias.
+// ─────────────────────────────────────────────────────────────
+const amateurFighters = [
+  {
+    id: 'amador-01',
+    name: 'Atleta Amador 01',
+    nickname: '',
+    level: 'Amador',
+    modality: 'Boxe',
+    category: 'Peso Leve',
+    record: '0V • 0D',
+    location: 'São Paulo, SP',
+    shortBio: 'Atleta amador em desenvolvimento, com foco em evolução técnica e preparação competitiva.',
+    story: 'História do atleta amador em atualização. Use este espaço para contar o início na modalidade, rotina de treino, evolução, objetivos e próximas competições.',
+    avatar: 'assets/img/fighters/amadores/amador-01-cover.jpg',
+    cover: 'assets/img/fighters/amadores/amador-01-cover.jpg',
+    portrait: 'assets/img/fighters/amadores/amador-01-portrait.jpg',
+    video: { title: 'Vídeo em breve', src: '', poster: 'assets/img/fighters/amadores/amador-01-video-poster.jpg', description: 'Treinos, movimentação, highlights e preparação do atleta amador.' },
+    gallery: ['assets/img/fighters/amadores/amador-01-gallery-01.jpg', 'assets/img/fighters/amadores/amador-01-gallery-02.jpg', 'assets/img/fighters/amadores/amador-01-gallery-03.jpg']
+  },
+  {
+    id: 'amador-02',
+    name: 'Atleta Amador 02',
+    nickname: '',
+    level: 'Amador',
+    modality: 'MMA',
+    category: 'Peso Médio',
+    record: '0V • 0D',
+    location: 'São Paulo, SP',
+    shortBio: 'Atleta amador com perfil versátil, preparado para evoluir em pé, quedas e controle de combate.',
+    story: 'História do atleta amador em atualização. Destaque equipe, base técnica, rotina de treino, metas e participação em competições.',
+    avatar: 'assets/img/fighters/amadores/amador-02-cover.jpg',
+    cover: 'assets/img/fighters/amadores/amador-02-cover.jpg',
+    portrait: 'assets/img/fighters/amadores/amador-02-portrait.jpg',
+    video: { title: 'Vídeo em breve', src: '', poster: 'assets/img/fighters/amadores/amador-02-video-poster.jpg', description: 'Vídeo do atleta em breve.' },
+    gallery: ['assets/img/fighters/amadores/amador-02-gallery-01.jpg', 'assets/img/fighters/amadores/amador-02-gallery-02.jpg', 'assets/img/fighters/amadores/amador-02-gallery-03.jpg']
+  },
+  {
+    id: 'amador-03',
+    name: 'Atleta Amador 03',
+    nickname: '',
+    level: 'Amador',
+    modality: 'K1',
+    category: 'Peso Meio-Médio',
+    record: '0V • 0D',
+    location: 'São Paulo, SP',
+    shortBio: 'Atleta amador de trocação, com foco em disciplina, ritmo de luta e evolução técnica.',
+    story: 'História do atleta amador em atualização. Conte a trajetória no K1, treinos, objetivos e próximos desafios.',
+    avatar: 'assets/img/fighters/amadores/amador-03-cover.jpg',
+    cover: 'assets/img/fighters/amadores/amador-03-cover.jpg',
+    portrait: 'assets/img/fighters/amadores/amador-03-portrait.jpg',
+    video: { title: 'Vídeo em breve', src: '', poster: 'assets/img/fighters/amadores/amador-03-video-poster.jpg', description: 'Vídeo do atleta em breve.' },
+    gallery: ['assets/img/fighters/amadores/amador-03-gallery-01.jpg', 'assets/img/fighters/amadores/amador-03-gallery-02.jpg', 'assets/img/fighters/amadores/amador-03-gallery-03.jpg']
+  },
+  {
+    id: 'amador-04',
+    name: 'Atleta Amador 04',
+    nickname: '',
+    level: 'Amador',
+    modality: 'Muay Thai',
+    category: 'Peso Pena',
+    record: '0V • 0D',
+    location: 'São Paulo, SP',
+    shortBio: 'Atleta amador em evolução, com foco em combate em pé, clinch e intensidade competitiva.',
+    story: 'História do atleta amador em atualização. Destaque início no Muay Thai, rotina, equipe, evolução e metas competitivas.',
+    avatar: 'assets/img/fighters/amadores/amador-04-cover.jpg',
+    cover: 'assets/img/fighters/amadores/amador-04-cover.jpg',
+    portrait: 'assets/img/fighters/amadores/amador-04-portrait.jpg',
+    video: { title: 'Vídeo em breve', src: '', poster: 'assets/img/fighters/amadores/amador-04-video-poster.jpg', description: 'Vídeo do atleta em breve.' },
+    gallery: ['assets/img/fighters/amadores/amador-04-gallery-01.jpg', 'assets/img/fighters/amadores/amador-04-gallery-02.jpg', 'assets/img/fighters/amadores/amador-04-gallery-03.jpg']
+  }
+];
+
+window.DFB_AMATEUR_FIGHTERS = amateurFighters;
+
+function getAmateurFightersData() {
+  if (Array.isArray(window.DFB_AMATEUR_FIGHTERS)) return window.DFB_AMATEUR_FIGHTERS;
+  if (typeof amateurFighters !== 'undefined' && Array.isArray(amateurFighters)) return amateurFighters;
+  return [];
+}
+
+function renderAmateurFighterCard(fighter, index = 0) {
+  const delay = Math.min(index * 70, 420);
+  const fighterId = escapeAttr(fighter.id || '');
+  const name = fighter.name || 'Atleta Amador';
+  const image = fighter.cover || fighter.avatar || fighter.portrait || 'assets/img/fighters/atleta-placeholder.jpg';
+  const modality = resolveModality(fighter.modality) || fighter.modality || '';
+  const category = fighter.category || '';
+
+  return `
+    <article
+      class="fighter-card amateur-fighter-card"
+      data-fighter-card
+      data-fighter-id="${fighterId}"
+      data-amateur-fighter-id="${fighterId}"
+      tabindex="0"
+      role="button"
+      aria-label="Abrir perfil de ${escapeAttr(name)}"
+      onclick="window.openFighterProfile && window.openFighterProfile('${fighterId}')"
+      style="animation-delay:${delay}ms"
+    >
+      <div class="amateur-fighter-card__media">
+        <img src="${escapeAttr(image)}" alt="${escapeAttr(name)}" loading="lazy">
+      </div>
+
+      <div class="amateur-fighter-card__overlay"></div>
+
+      <div class="amateur-fighter-card__top">
+        <span>Amador</span>
+      </div>
+
+      <div class="amateur-fighter-card__content">
+        <span class="amateur-fighter-card__modality">${escapeHtml(modality)}</span>
+        <h3>${escapeHtml(name)}</h3>
+        ${category ? `<p>${escapeHtml(category)}</p>` : ''}
+      </div>
+
+      <span class="amateur-fighter-card__action">Ver perfil</span>
+    </article>
+  `;
+}
+
+function filterAmateurFightersByModality(modality) {
+  const fightersData = getAmateurFightersData().filter((fighter) => isAllowedModality(fighter.modality));
+  if (modality === ALL_MODALITY) return fightersData;
+
+  const normalizedFilter = normalizeModality(modality);
+  return fightersData.filter((fighter) => normalizeModality(resolveModality(fighter.modality)) === normalizedFilter);
+}
+
+function renderAmateurFightersRows(activeModality = ALL_MODALITY) {
+  const container = document.getElementById('amateurFightersRows');
+  if (!container) return;
+
+  const filteredFighters = filterAmateurFightersByModality(activeModality);
+
+  if (!filteredFighters.length) {
+    container.innerHTML = `
+      <div class="empty-state fighters-empty">
+        <h3>Nenhum atleta encontrado</h3>
+        <p>Não há atletas amadores em ${escapeHtml(activeModality)} no momento.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <section class="fighters-row reveal is-visible" data-fighters-row>
+      <div class="fighters-row__header">
+        <h3>${activeModality === ALL_MODALITY ? 'Todos os amadores' : escapeHtml(activeModality)}</h3>
+        <div class="fighters-row__controls" aria-label="Controles da fileira de atletas amadores">
+          <button type="button" data-row-prev aria-label="Rolar para esquerda">‹</button>
+          <button type="button" data-row-next aria-label="Rolar para direita">›</button>
+        </div>
+      </div>
+      <div class="fighters-row__scroller" data-row-scroller tabindex="0">
+        <div class="fighters-row__track">
+          ${filteredFighters.map(renderAmateurFighterCard).join('')}
+        </div>
+      </div>
+    </section>
+  `;
+
+  bindFighterCards(container);
+  initHorizontalScroll(container);
+}
+
+function initAmateurFilters() {
+  const buttons = document.querySelectorAll('[data-amateur-modality]');
+  const section = document.getElementById('amadores');
+  if (!buttons.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const modality = button.dataset.amateurModality || ALL_MODALITY;
+      if (modality !== ALL_MODALITY && !isAllowedModality(modality)) return;
+
+      buttons.forEach((btn) => btn.classList.toggle('is-active', btn.dataset.amateurModality === modality));
+      renderAmateurFightersRows(modality);
+      closeMobileMenu();
+      section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+function initAmateurFightersPage() {
+  const container = document.getElementById('amateurFightersRows');
+  if (!container) return;
+
+  // Na página amadora, o modal existente passa a consumir somente a base dos atletas amadores.
+  window.DFB_FIGHTERS = getAmateurFightersData();
+
+  renderAmateurFightersRows(ALL_MODALITY);
+  initAmateurFilters();
 }
 
 
@@ -574,9 +774,19 @@ function bindFighterCards(scope = document) {
 }
 
 function getFightersData() {
-  if (Array.isArray(window.DFB_FIGHTERS)) return window.DFB_FIGHTERS;
-  if (typeof fighters !== 'undefined' && Array.isArray(fighters)) return fighters;
-  return [];
+  const professionalData = Array.isArray(window.DFB_FIGHTERS)
+    ? window.DFB_FIGHTERS
+    : (typeof fighters !== 'undefined' && Array.isArray(fighters) ? fighters : []);
+
+  const amateurData = Array.isArray(window.DFB_AMATEUR_FIGHTERS)
+    ? window.DFB_AMATEUR_FIGHTERS
+    : (typeof amateurFighters !== 'undefined' && Array.isArray(amateurFighters) ? amateurFighters : []);
+
+  if (document.body?.dataset.page === 'amadores') {
+    return amateurData.length ? amateurData : professionalData;
+  }
+
+  return professionalData;
 }
 
 function openFighterModal(fighterId) {
