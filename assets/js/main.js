@@ -153,6 +153,7 @@ function initApp() {
   safeInit('Navbar', initNavbar);
   safeInit('Hero interactions', initHeroInteractions);
   safeInit('Hero 3D fighter', initHero3DFighter);
+  safeInit('Hero person card', initHeroPersonCard);
   safeInit('Modality filters', initModalityFilters);
   safeInit('Fighters catalog', initFightersCatalog);
   safeInit('Amateur fighters page', initAmateurFightersPage);
@@ -1055,6 +1056,44 @@ function initHero3DFighter() {
     }
   });
 }
+
+
+function initHeroPersonCard() {
+  const card = document.querySelector('[data-hero-person]');
+  if (!card) return;
+
+  const frame = card.querySelector('.hero-person-card__frame');
+  const image = card.querySelector('.hero-person-card__image');
+
+  if (!frame) return;
+
+  const maxTilt = 5;
+
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
+
+    const rotateY = (x - 0.5) * maxTilt * 2;
+    const rotateX = (0.5 - y) * maxTilt * 2;
+
+    frame.style.transform = `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+
+    if (image) {
+      image.style.transform = `scale(1.055) translateX(${(x - 0.5) * 8}px) translateY(${(y - 0.5) * 8}px)`;
+    }
+  });
+
+  card.addEventListener('pointerleave', () => {
+    frame.style.transform = 'perspective(1100px) rotateX(0deg) rotateY(0deg) translateY(0)';
+
+    if (image) {
+      image.style.transform = 'scale(1.02)';
+    }
+  });
+}
+
 
 function initSafeMediaFallbacks() {
   document.addEventListener('error', (event) => {
