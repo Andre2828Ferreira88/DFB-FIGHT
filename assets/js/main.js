@@ -26,7 +26,7 @@ const MODALITY_ALIASES = {
 // Para adicionar novo atleta, copie um objeto deste array, mude o id, textos e caminhos das mídias.
 const fighters = [
   {
-    id: 'atleta-01', name: 'Nome do Atleta 01', nickname: 'Apelido', modality: 'Boxe', category: 'Peso Médio', record: '8V • 1D • 0E', status: 'Destaque', location: 'São Paulo, SP', featured: true,
+    id: 'atleta-01', name: 'Cycero Tayakan', nickname: '', modality: 'jiujitsu', category: 'Peso Médio', record: '8V • 1D • 0E', status: 'Destaque', location: 'São Paulo, SP', featured: true,
     shortBio: 'Atleta explosivo, com estilo agressivo, presença forte em combate e ótimo material para eventos.',
     story: 'Escreva aqui a história completa do atleta: início no esporte, trajetória, principais desafios, conquistas, objetivo profissional e diferencial competitivo. Este bloco foi feito para valorizar o atleta como produto esportivo e comercial.',
     avatar: 'assets/img/fighters/atleta-01-cover.jpg', portrait: 'assets/img/fighters/atleta-01-portrait.jpg',
