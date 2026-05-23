@@ -160,6 +160,7 @@ function initApp() {
   safeInit('Fighter profile modal', initFighterProfileModal);
   safeInit('Reveal animations', initRevealAnimations);
   safeInit('Sponsor animations', initSponsorAnimations);
+  safeInit('Founder section animations', initFounderSectionAnimations);
   safeInit('Media fallbacks', initSafeMediaFallbacks);
   safeInit('Footer video', initFooterVideo);
   safeInit('Autoplay videos', initAllAutoplayVideos);
@@ -1263,4 +1264,107 @@ function escapeHtml(value) {
 
 function escapeAttr(value) {
   return escapeHtml(value).replace(/`/g, '&#096;');
+}
+
+
+function initFounderSectionAnimations() {
+  const section = document.querySelector('.founder-section');
+  if (!section) return;
+
+  const revealItems = Array.from(section.querySelectorAll('[data-founder-reveal]'));
+  const counters = section.querySelectorAll('[data-count-to]');
+  const visual = section.querySelector('[data-founder-parallax]');
+  const photo = section.querySelector('.founder-photo-card img');
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const index = revealItems.indexOf(entry.target);
+        entry.target.style.transitionDelay = `${Math.min(index * 90, 540)}ms`;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.16,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateFounderCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach((counter) => counterObserver.observe(counter));
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+    counters.forEach(animateFounderCounter);
+  }
+
+  if (visual) {
+    visual.addEventListener('pointermove', (event) => {
+      const rect = visual.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      visual.style.transform = `perspective(1100px) rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
+
+      if (photo) {
+        photo.style.transform = `scale(1.055) translateX(${x * 10}px) translateY(${y * 10}px)`;
+      }
+    });
+
+    visual.addEventListener('pointerleave', () => {
+      visual.style.transform = 'perspective(1100px) rotateX(0deg) rotateY(0deg)';
+
+      if (photo) {
+        photo.style.transform = 'scale(1.02)';
+      }
+    });
+  }
+
+  let ticking = false;
+  const updateScrollProgress = () => {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight || 1;
+    const progress = 1 - Math.min(Math.max(rect.top / windowHeight, -1), 1);
+    section.style.setProperty('--founder-scroll', progress.toFixed(3));
+    ticking = false;
+  };
+
+  updateScrollProgress();
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateScrollProgress);
+  }, { passive: true });
+}
+
+function animateFounderCounter(element) {
+  const target = Number(element.dataset.countTo || 0);
+  if (!target) return;
+
+  const duration = 1300;
+  const start = performance.now();
+
+  function update(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(target * eased);
+
+    element.textContent = `${value}+`;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
 }
