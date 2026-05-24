@@ -163,6 +163,7 @@ function initApp() {
   safeInit('Founder section animations', initFounderSectionAnimations);
   safeInit('Media fallbacks', initSafeMediaFallbacks);
   safeInit('Footer video', initFooterVideo);
+  safeInit('Premium animation system', initPremiumAnimationSystem);
   safeInit('Autoplay videos', initAllAutoplayVideos);
 }
 
@@ -491,6 +492,7 @@ function renderAmateurFightersRows(activeModality = ALL_MODALITY) {
 
   bindFighterCards(container);
   initHorizontalScroll(container);
+  refreshPremiumMotions(container);
 }
 
 function initAmateurFilters() {
@@ -559,6 +561,7 @@ function renderFightersRows(modality = ALL_MODALITY) {
 
   bindFighterCards(rowsContainer);
   initHorizontalScroll(rowsContainer);
+  refreshPremiumMotions(rowsContainer);
 }
 
 function getFighterGroups(modality) {
@@ -1367,4 +1370,220 @@ function animateFounderCounter(element) {
   }
 
   requestAnimationFrame(update);
+}
+
+
+/* ==========================================================
+   DFB PREMIUM MOTION SYSTEM
+   Inspiração de fluidez/microinterações premium, sem bibliotecas.
+   ========================================================== */
+
+let dfbMotionObserver = null;
+let dfbHeroParallaxBound = false;
+let dfbHeaderMotionBound = false;
+
+function shouldReduceMotion() {
+  return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function initPremiumAnimationSystem() {
+  if (shouldReduceMotion()) {
+    document.querySelectorAll('[data-motion]').forEach((element) => element.classList.add('is-visible'));
+    return;
+  }
+
+  applyStaggerMotion();
+  initMotionReveal();
+  initAnimatedHeader();
+  initHeroParallax();
+  initSponsorMotion();
+
+  if (window.matchMedia('(pointer: fine)').matches) {
+    initMagneticCards();
+  }
+}
+
+function refreshPremiumMotions(scope = document) {
+  if (shouldReduceMotion()) return;
+
+  applyStaggerMotion(scope);
+  initMotionReveal(scope);
+
+  if (window.matchMedia('(pointer: fine)').matches) {
+    initMagneticCards(scope);
+  }
+}
+
+function initMotionReveal(scope = document) {
+  const selectors = [
+    '.section-header',
+    '.hero-content',
+    '.hero-person-card',
+    '.hero-3d-fighter',
+    '.founder-content > *',
+    '.founder-step',
+    '.founder-quote',
+    '.fighter-card',
+    '.amateur-fighter-card',
+    '.sponsor-card',
+    '.contact-cta',
+    '.footer-pro__brand',
+    '.footer-pro__column',
+    '.footer-pro__cta',
+    '.site-footer > *'
+  ];
+
+  const context = scope instanceof Element || scope instanceof Document ? scope : document;
+  const elements = Array.from(context.querySelectorAll(selectors.join(',')));
+
+  if (!dfbMotionObserver) {
+    dfbMotionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add('is-visible');
+        dfbMotionObserver.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px'
+    });
+  }
+
+  elements.forEach((element, index) => {
+    if (element.classList.contains('is-visible')) return;
+
+    if (!element.hasAttribute('data-motion')) {
+      if (element.matches('.hero-person-card, .hero-3d-fighter, .founder-visual')) {
+        element.setAttribute('data-motion', 'scale');
+      } else if (element.matches('.founder-photo-card, .sponsor-card')) {
+        element.setAttribute('data-motion', 'fade-left');
+      } else {
+        element.setAttribute('data-motion', 'fade-up');
+      }
+    }
+
+    if (!element.hasAttribute('data-motion-delay')) {
+      element.setAttribute('data-motion-delay', String(Math.min((index % 5) + 1, 5)));
+    }
+
+    if (element.dataset.motionObserved === 'true') return;
+    element.dataset.motionObserved = 'true';
+    dfbMotionObserver.observe(element);
+  });
+}
+
+function applyStaggerMotion(scope = document) {
+  const context = scope instanceof Element || scope instanceof Document ? scope : document;
+  const rows = context.querySelectorAll('.fighters-row__track, .founder-timeline, .materials-grid, .sponsors-grid, .footer-pro__grid');
+
+  rows.forEach((row) => {
+    Array.from(row.children).forEach((child, index) => {
+      child.style.setProperty('--motion-index', index);
+      child.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
+
+      if (!child.hasAttribute('data-motion')) {
+        child.setAttribute('data-motion', 'fade-up');
+      }
+    });
+  });
+}
+
+function initMagneticCards(scope = document) {
+  const context = scope instanceof Element || scope instanceof Document ? scope : document;
+  const cards = context.querySelectorAll('.fighter-card, .amateur-fighter-card, .sponsor-card');
+
+  cards.forEach((card) => {
+    if (card.dataset.magneticBound === 'true') return;
+    card.dataset.magneticBound = 'true';
+
+    card.addEventListener('pointermove', (event) => {
+      if (shouldReduceMotion()) return;
+
+      const rect = card.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+
+      card.style.setProperty('--mx', `${x}px`);
+      card.style.setProperty('--my', `${y}px`);
+      card.style.transform = `translateY(-10px) scale(1.018) rotateX(${(-y / rect.height) * 4}deg) rotateY(${(x / rect.width) * 4}deg)`;
+    });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.removeProperty('--mx');
+      card.style.removeProperty('--my');
+      card.style.transform = '';
+    });
+  });
+}
+
+function initHeroParallax() {
+  if (dfbHeroParallaxBound || shouldReduceMotion()) return;
+
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const visual = hero.querySelector('.hero-person-card, .hero-3d-fighter, [data-hero-person], [data-hero-3d]');
+  const video = hero.querySelector('.hero-video');
+
+  let ticking = false;
+
+  function update() {
+    const rect = hero.getBoundingClientRect();
+    const progress = Math.min(Math.max(-rect.top / Math.max(rect.height, 1), 0), 1);
+
+    hero.style.setProperty('--hero-scroll', progress.toFixed(3));
+
+    if (visual) {
+      visual.style.transform = `translate3d(0, ${progress * 22}px, 0)`;
+    }
+
+    if (video) {
+      video.style.transform = `scale(${1.04 + progress * 0.035}) translateY(${progress * 16}px)`;
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
+  dfbHeroParallaxBound = true;
+}
+
+function initAnimatedHeader() {
+  if (dfbHeaderMotionBound) return;
+
+  const header = document.querySelector('.site-header, .navbar, header');
+  if (!header) return;
+
+  let ticking = false;
+
+  function update() {
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
+  dfbHeaderMotionBound = true;
+}
+
+function initSponsorMotion() {
+  document.querySelectorAll('.sponsor-card').forEach((sponsor, index) => {
+    sponsor.style.setProperty('--sponsor-index', index);
+  });
 }

@@ -2774,3 +2774,268 @@ body[data-page="amadores"] .nav-menu a[aria-current="page"] {
     transform: translateY(-4px);
   }
 }
+
+
+/* ==========================================================
+   DFB PREMIUM MOTION SYSTEM
+   Animações e microinterações inspiradas em experiências premium.
+   Sem bibliotecas externas.
+   ========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+[data-motion] {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0);
+  filter: blur(8px);
+  transition:
+    opacity .85s cubic-bezier(.2,.7,.2,1),
+    transform .85s cubic-bezier(.2,.7,.2,1),
+    filter .85s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform, filter;
+}
+
+[data-motion="fade-left"] {
+  transform: translate3d(42px, 0, 0);
+}
+
+[data-motion="fade-right"] {
+  transform: translate3d(-42px, 0, 0);
+}
+
+[data-motion="scale"] {
+  transform: scale(.94);
+}
+
+[data-motion].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+[data-motion-delay="1"] { transition-delay: .08s; }
+[data-motion-delay="2"] { transition-delay: .16s; }
+[data-motion-delay="3"] { transition-delay: .24s; }
+[data-motion-delay="4"] { transition-delay: .32s; }
+[data-motion-delay="5"] { transition-delay: .40s; }
+
+.site-header,
+.navbar,
+header {
+  transition:
+    transform .45s cubic-bezier(.2,.7,.2,1),
+    background .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    backdrop-filter .35s ease;
+}
+
+.site-header.is-scrolled,
+.navbar.is-scrolled,
+header.is-scrolled {
+  background: rgba(5,5,5,.82);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 16px 60px rgba(0,0,0,.28);
+}
+
+.btn,
+.mobile-menu-toggle,
+.modality-filter,
+.hero-actions a,
+.contact-cta a,
+.fighters-row__controls button,
+.footer-pro a {
+  transition:
+    transform .28s cubic-bezier(.2,.7,.2,1),
+    box-shadow .28s ease,
+    filter .28s ease,
+    border-color .28s ease,
+    background .28s ease,
+    color .28s ease;
+}
+
+.btn:hover,
+.modality-filter:hover,
+.hero-actions a:hover,
+.contact-cta a:hover,
+.footer-pro a:hover {
+  transform: translateY(-3px) scale(1.015);
+}
+
+.btn:active,
+.modality-filter:active,
+.hero-actions a:active,
+.contact-cta a:active {
+  transform: translateY(0) scale(.98);
+}
+
+.btn,
+.hero-actions a,
+.contact-cta a {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after,
+.hero-actions a::after,
+.contact-cta a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.22) 45%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform .72s cubic-bezier(.2,.7,.2,1);
+  pointer-events: none;
+}
+
+.btn:hover::after,
+.hero-actions a:hover::after,
+.contact-cta a:hover::after {
+  transform: translateX(120%);
+}
+
+.fighter-card,
+.amateur-fighter-card,
+.sponsor-card {
+  transform-style: preserve-3d;
+  transition:
+    transform .42s cubic-bezier(.2,.7,.2,1),
+    border-color .35s ease,
+    box-shadow .35s ease,
+    filter .35s ease;
+  will-change: transform;
+}
+
+.fighter-card:hover,
+.amateur-fighter-card:hover {
+  transform: translateY(-10px) scale(1.018);
+}
+
+.fighter-card img,
+.amateur-fighter-card img {
+  transition:
+    transform .78s cubic-bezier(.2,.7,.2,1),
+    filter .78s ease;
+}
+
+.fighter-card:hover img,
+.amateur-fighter-card:hover img {
+  transform: scale(1.07);
+}
+
+.hero-video {
+  will-change: transform;
+}
+
+.hero-person-card,
+.hero-3d-fighter {
+  will-change: transform;
+}
+
+.sponsor-card {
+  animation: sponsorFloat 5.5s ease-in-out infinite;
+  animation-delay: calc(var(--sponsor-index, 0) * .35s);
+}
+
+@keyframes sponsorFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.fighter-portfolio-modal__dialog,
+.fighter-profile-modal__dialog {
+  transition:
+    opacity .45s cubic-bezier(.2,.7,.2,1),
+    transform .45s cubic-bezier(.2,.7,.2,1),
+    filter .45s cubic-bezier(.2,.7,.2,1);
+}
+
+.fighter-portfolio-modal.is-active .fighter-portfolio-modal__dialog,
+.fighter-profile-modal.is-active .fighter-profile-modal__dialog,
+.fighter-profile-modal.is-open .fighter-profile-modal__dialog {
+  animation: modalPremiumIn .52s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes modalPremiumIn {
+  from {
+    opacity: 0;
+    transform: translateY(42px) scale(.96);
+    filter: blur(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.footer-bg-video,
+.footer-pro__video {
+  will-change: transform;
+  animation: footerVideoDrift 12s ease-in-out infinite;
+}
+
+@keyframes footerVideoDrift {
+  0%, 100% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.08) translate3d(0, -10px, 0);
+  }
+}
+
+.founder-section {
+  --founder-scroll: 0;
+}
+
+.founder-bg {
+  transform: translateY(calc(var(--founder-scroll) * -28px));
+}
+
+.founder-photo-card {
+  transform: translateY(calc(var(--founder-scroll) * -18px));
+}
+
+@media (hover: none) {
+  .fighter-card:hover,
+  .amateur-fighter-card:hover,
+  .btn:hover,
+  .modality-filter:hover,
+  .hero-actions a:hover,
+  .contact-cta a:hover {
+    transform: none;
+  }
+
+  .sponsor-card {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
