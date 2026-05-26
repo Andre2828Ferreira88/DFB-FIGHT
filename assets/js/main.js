@@ -37,7 +37,7 @@ const fighters = [
     ]
   },
   {
-    id: 'atleta-02', name: 'Nome do Atleta 02', nickname: 'Mão Pesada', modality: 'MMA', category: 'Peso Leve', record: '6V • 2D • 0E', status: 'Profissional', location: 'Guarulhos, SP', featured: true,
+    id: 'atleta-02', name: 'Walter Jesus', nickname: '', modality: 'boxe', category: 'Peso Leve', record: '13V • 3D • 0E', status: 'Profissional', location: 'Guarulhos, SP', featured: true,
     shortBio: 'Lutador versátil, boa leitura de luta e combinação entre trocação, queda e pressão no cage.',
     story: 'Substitua este texto pela trajetória real do atleta. Destaque origem, treinos, evolução, lutas marcantes, disciplina e próximos passos dentro da modalidade.',
     avatar: 'assets/img/fighters/atleta-02-cover.jpg', portrait: 'assets/img/fighters/atleta-02-portrait.jpg',
