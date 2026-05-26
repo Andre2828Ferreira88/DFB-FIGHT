@@ -37,8 +37,8 @@ const fighters = [
     ]
   },
   {
-    id: 'atleta-02', name: 'Walter Jesus', nickname: '', modality: 'boxe', category: 'Peso Leve', record: '13V • 3D • 0E', status: 'Profissional', location: 'Guarulhos, SP', featured: true,
-    shortBio: 'Lutador versátil, boa leitura de luta e combinação entre trocação, queda e pressão no cage.',
+    id: 'atleta-02', name: 'Walter Jesus', nickname: '', modality: 'boxe', category: 'Meio médio', record: '13V • 3D • 0E', status: 'Profissional', location: 'Guarulhos, SP', featured: true,
+    shortBio: 'Lutador versátil, boa leitura de luta e combinação entre trocação estratégicas e fortes.',
     story: 'Substitua este texto pela trajetória real do atleta. Destaque origem, treinos, evolução, lutas marcantes, disciplina e próximos passos dentro da modalidade.',
     avatar: 'assets/img/fighters/atleta-02-cover.jpg', portrait: 'assets/img/fighters/atleta-02-portrait.jpg',
     gallery: ['assets/img/fighters/atleta-02-gallery-01.jpg', 'assets/img/fighters/atleta-02-gallery-02.jpg', 'assets/img/fighters/atleta-02-gallery-03.jpg'],
