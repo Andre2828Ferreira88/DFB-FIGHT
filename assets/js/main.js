@@ -48,7 +48,7 @@ const fighters = [
     ]
   },
   {
-    id: 'atleta-03', name: 'Cleilson da Silva', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso-Galo', record: '9V • 5D', status: 'Campeão', location: 'Tucuruí Pará', featured: true,
+    id: 'atleta-03', name: 'Cleilson da Silva', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso-Galo', record: '9V • 5D', status: 'ARANHA', location: 'Tucuruí Pará', featured: true,
     shortBio: 'Competidor técnico, forte no controle posicional e com histórico competitivo em torneios regionais.',
     story: 'Com um cartel de 9 vitórias e 5 derrotas, Cleilson demonstra experiência, resistência e evolução constante na modalidade. Um dos seus grandes diferenciais é lutar com as duas bases, podendo atuar tanto como destro quanto canhoto, o que torna seu jogo imprevisível e estratégico durante os combates.Representando a força do Pará no MMA, Cleilson carrega no cage a disciplina do treinamento, a garra da sua equipe e a determinação de continuar crescendo no esporte. Seu estilo combina agressividade, adaptação e inteligência de luta, características que fazem dele um atleta perigoso e preparado para grandes desafios.',
     avatar: 'assets/img/fighters/atleta-03-cover.jpg', portrait: 'assets/img/fighters/atleta-03-portrait.jpg',
@@ -80,6 +80,19 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-05-training.mp4', poster: 'assets/img/fighters/atleta-05-training-poster.jpg', description: 'Preparação, treino técnico e bastidores da rotina.' }
     ]
   },
+
+  {
+    id: 'atleta-07', name: 'Clebison dos Santos', nickname: 'loro José', modality: 'MMA', category: 'Peso Mosca', record: '6V • 2D • 0E', status: 'Soco forte', location: 'curionopolis Pará', featured: true,
+    shortBio: 'Loro José se destaca por unir a técnica refinada do Jiu-Jitsu com um estilo de combate agressivo e direto. Lutador destro, ele possui presença forte, postura competitiva e um jogo de pressão que transmite intensidade desde o primeiro contato.',
+    story: 'Com um cartel de 8 lutas, sendo 6 vitórias e 2 derrotas, Clebison demonstra experiência, técnica e espírito competitivo dentro das artes marciais. Lutador destro, ele leva para os combates uma base firme, disciplina de treino e muita vontade de evolução.Representando a força do interior paraense, Loro José carrega no cage e nos tatames a determinação de quem busca crescer no esporte com garra, coragem e respeito. Seu estilo une a técnica do Jiu-Jitsu com a intensidade do MMA, tornando-o um atleta preparado para grandes desafios.',
+    avatar: 'assets/img/fighters/atleta-07-cover.jpg', portrait: 'assets/img/fighters/atleta-07-portrait.jpg',
+    gallery: ['assets/img/fighters/atleta-07-gallery-01.jpg', 'assets/img/fighters/atleta-07-gallery-02.jpg', 'assets/img/fighters/atleta-07-gallery-03.jpg'],
+    videos: [
+      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-07-highlight.mp4', poster: 'assets/img/fighters/atleta-07-video-poster.jpg', description: 'Sequências de impacto, entrada no ringue e melhores golpes.' },
+      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-07-training.mp4', poster: 'assets/img/fighters/atleta-07-training-poster.jpg', description: 'Sombra, saco, manopla e rotina de preparação.' }
+    ]
+  },
+  
   {
     id: 'atleta-06', name: 'Nome do Atleta 06', nickname: 'Grappler', modality: 'MMA', category: 'Até 77kg', record: '11V • 4D', status: 'Profissional', location: 'Campinas, SP', featured: false,
     shortBio: 'Base forte de quedas, controle e pressão constante para dominar o ritmo do combate.',
@@ -91,17 +104,7 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-06-training.mp4', poster: 'assets/img/fighters/atleta-06-training-poster.jpg', description: 'Drills de wrestling, preparação física e bastidores.' }
     ]
   },
-  {
-    id: 'atleta-07', name: 'Clebison dos Santos Sousa', nickname: 'loro José', modality: 'MMA', category: 'Peso Mosca', record: '6V • 2D • 0E', status: 'Soco forte', location: 'curionopolis Pará', featured: true,
-    shortBio: 'Loro José se destaca por unir a técnica refinada do Jiu-Jitsu com um estilo de combate agressivo e direto. Lutador destro, ele possui presença forte, postura competitiva e um jogo de pressão que transmite intensidade desde o primeiro contato.',
-    story: 'Com um cartel de 8 lutas, sendo 6 vitórias e 2 derrotas, Clebison demonstra experiência, técnica e espírito competitivo dentro das artes marciais. Lutador destro, ele leva para os combates uma base firme, disciplina de treino e muita vontade de evolução.Representando a força do interior paraense, Loro José carrega no cage e nos tatames a determinação de quem busca crescer no esporte com garra, coragem e respeito. Seu estilo une a técnica do Jiu-Jitsu com a intensidade do MMA, tornando-o um atleta preparado para grandes desafios.',
-    avatar: 'assets/img/fighters/atleta-07-cover.jpg', portrait: 'assets/img/fighters/atleta-07-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-07-gallery-01.jpg', 'assets/img/fighters/atleta-07-gallery-02.jpg', 'assets/img/fighters/atleta-07-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-07-highlight.mp4', poster: 'assets/img/fighters/atleta-07-video-poster.jpg', description: 'Sequências de impacto, entrada no ringue e melhores golpes.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-07-training.mp4', poster: 'assets/img/fighters/atleta-07-training-poster.jpg', description: 'Sombra, saco, manopla e rotina de preparação.' }
-    ]
-  },
+  
   {
     id: 'atleta-08', name: 'Nome do Atleta 08', nickname: 'Samurai', modality: 'MMA', category: 'Peso Galo', record: '7V • 3D', status: 'Profissional', location: 'Jundiaí, SP', featured: false,
     shortBio: 'Atleta rápido, técnico e com boa capacidade de adaptação em pé e no solo.',
@@ -725,6 +728,7 @@ function renderFightersRows(modality = ALL_MODALITY) {
 
   bindFighterCards(rowsContainer);
   initHorizontalScroll(rowsContainer);
+  initFighterHireButtons();
   reapplyAnimationsAfterRender();
 }
 
@@ -767,32 +771,72 @@ function isAllowedModality(modality) {
   return Boolean(resolveModality(modality));
 }
 
+function parseFighterRecord(recordText = '') {
+  const text = String(recordText || '').toUpperCase();
+
+  const wins = text.match(/(\d+)\s*V/)?.[1] || '0';
+  const losses = text.match(/(\d+)\s*D/)?.[1] || '0';
+  const draws = text.match(/(\d+)\s*E/)?.[1] || '0';
+
+  return { wins, losses, draws };
+}
+
 function renderFighterCard(fighter, index) {
   const delay = Math.min(index * 70, 420);
   const fighterId = escapeAttr(fighter.id || '');
+  const name = fighter.name || 'Atleta DFB';
+  const modality = resolveModality(fighter.modality) || fighter.modality || '';
+  const category = fighter.category || '';
+  const image = fighter.cover || fighter.avatar || fighter.portrait || 'assets/img/fighters/atleta-01-cover.jpg';
+  const record = parseFighterRecord(fighter.record || fighter.cartel || '');
+  const status = fighter.status || 'Ativo';
 
   return `
-    <button
-      class="fighter-card"
-      type="button"
+    <article
+      class="fighter-card fighter-card--enhanced"
       data-fighter-card
       data-fighter-id="${fighterId}"
-      aria-label="Abrir perfil de ${escapeAttr(fighter.name || 'Atleta DFB')}"
+      tabindex="0"
+      role="button"
+      aria-label="Abrir perfil de ${escapeAttr(name)}"
       onclick="window.openFighterProfile && window.openFighterProfile('${fighterId}')"
       style="animation-delay:${delay}ms"
     >
-      <img src="${escapeAttr(fighter.cover || fighter.avatar || fighter.portrait || '')}" alt="${escapeAttr(fighter.name || 'Atleta DFB')}" loading="lazy">
-      <div class="fighter-card__content">
-        <h4>${escapeHtml(fighter.name || '')}</h4>
-        <p>${escapeHtml(fighter.nickname || fighter.shortBio || '')}</p>
-        <div class="fighter-card__meta">
-          <span>${escapeHtml(resolveModality(fighter.modality) || fighter.modality || '')}</span>
-          <span>${escapeHtml(fighter.category || '')}</span>
-          <span>${escapeHtml(fighter.record || '')}</span>
-        </div>
-        <div class="fighter-card__action">Ver perfil</div>
+      <div class="fighter-card__media">
+        <img src="${escapeAttr(image)}" alt="${escapeAttr(name)}" loading="lazy">
       </div>
-    </button>
+
+      <div class="fighter-card__overlay"></div>
+
+      ${modality ? `<span class="fighter-card__tag">${escapeHtml(modality)}</span>` : ''}
+
+      <div class="fighter-card__content">
+        <h4>${escapeHtml(name)}</h4>
+        ${fighter.nickname ? `<p class="fighter-card__nickname">${escapeHtml(fighter.nickname)}</p>` : ''}
+
+        <div class="fighter-card__meta">
+          ${category ? `<span>${escapeHtml(category)}</span>` : ''}
+          ${fighter.location ? `<span>${escapeHtml(fighter.location)}</span>` : ''}
+        </div>
+
+        <div class="fighter-card__record" aria-label="Cartel de ${escapeAttr(name)}">
+          <span class="fighter-card__record-label">Cartel</span>
+          <strong class="record-win">${escapeHtml(record.wins)}V</strong>
+          <strong class="record-loss">${escapeHtml(record.losses)}D</strong>
+          <strong class="record-draw">${escapeHtml(record.draws)}E</strong>
+        </div>
+
+        ${status ? `<span class="fighter-card__status">${escapeHtml(status)}</span>` : ''}
+
+        <a
+          class="fighter-card__hire"
+          href="#contato"
+          data-hire-fighter="${fighterId}"
+          data-ignore-fighter-profile
+          aria-label="Contratar ${escapeAttr(name)}"
+        >Contratar</a>
+      </div>
+    </article>
   `;
 }
 
@@ -844,8 +888,10 @@ function initFighterProfileModal() {
         return;
       }
 
+      if (event.target.closest?.('[data-ignore-fighter-profile]')) return;
+
       const card = event.target.closest?.('[data-fighter-id]');
-      if (!card || card.closest('[data-ignore-fighter-profile]')) return;
+      if (!card) return;
 
       const fighterId = card.getAttribute('data-fighter-id');
       if (!fighterId) {
@@ -1763,6 +1809,41 @@ function shouldReduceMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+function getFighterNameById(fighterId) {
+  const allFighters = [];
+
+  if (Array.isArray(window.DFB_FIGHTERS)) allFighters.push(...window.DFB_FIGHTERS);
+  if (Array.isArray(window.DFB_AMATEUR_FIGHTERS)) allFighters.push(...window.DFB_AMATEUR_FIGHTERS);
+  if (typeof fighters !== 'undefined' && Array.isArray(fighters)) allFighters.push(...fighters);
+  if (typeof amateurFighters !== 'undefined' && Array.isArray(amateurFighters)) allFighters.push(...amateurFighters);
+
+  const fighter = allFighters.find((item) => String(item.id) === String(fighterId));
+  return fighter?.name || fighter?.nome || '';
+}
+
+function initFighterHireButtons() {
+  const buttons = document.querySelectorAll('[data-hire-fighter]');
+
+  buttons.forEach((button) => {
+    if (button.dataset.hireBound === 'true') return;
+    button.dataset.hireBound = 'true';
+
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const fighterId = button.dataset.hireFighter;
+      const fighterName = getFighterNameById(fighterId);
+      const message = fighterName
+        ? `Olá, tenho interesse em contratar o atleta ${fighterName}.`
+        : 'Olá, tenho interesse em contratar um atleta da DFB.';
+
+      const url = `https://wa.me/5511939223926?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  });
+}
+
 function initApp() {
   safeInit('Page loader', initPageLoader);
   safeInit('Navbar', initNavbar);
@@ -1782,5 +1863,6 @@ function initApp() {
   safeInit('Hero parallax', initHeroParallax);
   safeInit('Sponsor motion', initSponsorMotion);
   safeInit('Motion system', refreshMotionSystem);
+  safeInit('Fighter hire buttons', initFighterHireButtons);
   safeInit('Motion failsafe', initMotionFailsafe);
 }
