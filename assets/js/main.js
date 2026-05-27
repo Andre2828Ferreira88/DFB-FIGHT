@@ -48,9 +48,9 @@ const fighters = [
     ]
   },
   {
-    id: 'atleta-03', name: 'Nome do Atleta 03', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso Pena', record: '14V • 3D', status: 'Campeão', location: 'Osasco, SP', featured: true,
+    id: 'atleta-03', name: 'Cleilson da Silva', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso-Galo', record: '9V • 5D', status: 'Campeão', location: 'Tucuruí Pará', featured: true,
     shortBio: 'Competidor técnico, forte no controle posicional e com histórico competitivo em torneios regionais.',
-    story: 'Use este espaço para contar a evolução no jiu-jitsu, graduação, equipe, títulos, estilo de jogo, participações em campeonatos e objetivos.',
+    story: 'Com um cartel de 9 vitórias e 5 derrotas, Cleilson demonstra experiência, resistência e evolução constante na modalidade. Um dos seus grandes diferenciais é lutar com as duas bases, podendo atuar tanto como destro quanto canhoto, o que torna seu jogo imprevisível e estratégico durante os combates.Representando a força do Pará no MMA, Cleilson carrega no cage a disciplina do treinamento, a garra da sua equipe e a determinação de continuar crescendo no esporte. Seu estilo combina agressividade, adaptação e inteligência de luta, características que fazem dele um atleta perigoso e preparado para grandes desafios.',
     avatar: 'assets/img/fighters/atleta-03-cover.jpg', portrait: 'assets/img/fighters/atleta-03-portrait.jpg',
     gallery: ['assets/img/fighters/atleta-03-gallery-01.jpg', 'assets/img/fighters/atleta-03-gallery-02.jpg', 'assets/img/fighters/atleta-03-gallery-03.jpg'],
     videos: [
@@ -92,9 +92,9 @@ const fighters = [
     ]
   },
   {
-    id: 'atleta-07', name: 'Nome do Atleta 07', nickname: 'Predador', modality: 'Boxe', category: 'Peso Pesado', record: '5V • 0D • 0E', status: 'Invicto', location: 'São Paulo, SP', featured: true,
-    shortBio: 'Boxeador de impacto, forte apelo visual e narrativa perfeita para material de promoção.',
-    story: 'Conte a história do atleta, sua entrada no boxe, vitórias, estilo, equipe, rotina e próximos desafios.',
+    id: 'atleta-07', name: 'Clebison dos Santos Sousa', nickname: 'loro José', modality: 'MMA', category: 'Peso Mosca', record: '6V • 2D • 0E', status: 'Soco forte', location: 'curionopolis Pará', featured: true,
+    shortBio: 'Loro José se destaca por unir a técnica refinada do Jiu-Jitsu com um estilo de combate agressivo e direto. Lutador destro, ele possui presença forte, postura competitiva e um jogo de pressão que transmite intensidade desde o primeiro contato.',
+    story: 'Com um cartel de 8 lutas, sendo 6 vitórias e 2 derrotas, Clebison demonstra experiência, técnica e espírito competitivo dentro das artes marciais. Lutador destro, ele leva para os combates uma base firme, disciplina de treino e muita vontade de evolução.Representando a força do interior paraense, Loro José carrega no cage e nos tatames a determinação de quem busca crescer no esporte com garra, coragem e respeito. Seu estilo une a técnica do Jiu-Jitsu com a intensidade do MMA, tornando-o um atleta preparado para grandes desafios.',
     avatar: 'assets/img/fighters/atleta-07-cover.jpg', portrait: 'assets/img/fighters/atleta-07-portrait.jpg',
     gallery: ['assets/img/fighters/atleta-07-gallery-01.jpg', 'assets/img/fighters/atleta-07-gallery-02.jpg', 'assets/img/fighters/atleta-07-gallery-03.jpg'],
     videos: [
