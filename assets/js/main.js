@@ -1866,3 +1866,123 @@ function initApp() {
   safeInit('Fighter hire buttons', initFighterHireButtons);
   safeInit('Motion failsafe', initMotionFailsafe);
 }
+
+/* ============================================================
+   DFB — CONTADORES ANIMADOS NOS NÚMEROS DE AUTORIDADE
+   ============================================================ */
+
+function initDFBStatsCounters() {
+  const counters = document.querySelectorAll('[data-dfb-count]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const element = entry.target;
+      const target  = Number(element.dataset.dfbCount || 0);
+      const prefix  = element.dataset.prefix !== undefined ? element.dataset.prefix : '+';
+      const duration = 1400;
+      const start    = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        const value    = Math.round(target * eased);
+
+        element.textContent = prefix + value;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+      observer.unobserve(element);
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach((counter) => observer.observe(counter));
+}
+
+/* ============================================================
+   DFB — REVEAL ANIMADO PARA NOVAS SEÇÕES
+   ============================================================ */
+
+function initDFBNewSectionsReveal() {
+  const targets = document.querySelectorAll(
+    '.dfb-authority, .dfb-sponsors-cta, .dfb-method, .dfb-organizers, .dfb-proof, .dfb-gallery-cta'
+  );
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  targets.forEach((el) => observer.observe(el));
+}
+
+/* ============================================================
+   DFB — MÉTODO CARDS: STAGGER DE ENTRADA
+   ============================================================ */
+
+function initDFBMethodCards() {
+  const cards = document.querySelectorAll('.dfb-method__card');
+  if (!cards.length) return;
+
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(24px)';
+    card.style.transition = `opacity .55s ${i * 0.09}s cubic-bezier(.2,.8,.2,1), transform .55s ${i * 0.09}s cubic-bezier(.2,.8,.2,1)`;
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      cards.forEach((card) => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      });
+      observer.disconnect();
+    }
+  }, { threshold: 0.12 });
+
+  const grid = document.querySelector('.dfb-method__grid');
+  if (grid) observer.observe(grid);
+}
+
+/* ============================================================
+   DFB — ANO ATUAL NO FOOTER
+   (garante que funcione mesmo se já existir no código anterior)
+   ============================================================ */
+
+function initCurrentYear() {
+  document.querySelectorAll('[data-current-year]').forEach((el) => {
+    if (!el.textContent.trim()) el.textContent = new Date().getFullYear();
+  });
+}
+
+/* ============================================================
+   REGISTRAR NO initApp (via extensão segura)
+   ============================================================ */
+
+(function extendDFBApp() {
+  const originalApp = typeof initApp === 'function' ? initApp : null;
+
+  function runNewInits() {
+    safeInit('DFB stats counters',       initDFBStatsCounters);
+    safeInit('DFB new sections reveal',  initDFBNewSectionsReveal);
+    safeInit('DFB method cards',         initDFBMethodCards);
+    safeInit('DFB current year',         initCurrentYear);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runNewInits);
+  } else {
+    runNewInits();
+  }
+})();

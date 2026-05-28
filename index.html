@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Douglas Fight Promotion — catálogo premium de atletas de luta, histórias, vídeos, galeria e contato comercial." />
+  <meta name="description" content="Douglas Fight Promotion — gestão, promoção e conexão de atletas de combate. Boxe, MMA, Muay Thai e K1 para eventos, marcas e parceiros comerciais." />
   <meta name="theme-color" content="#050505" />
   <title>DFB — Douglas Fight Promotion</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +19,9 @@
         <span class="page-loader__fallback-logo">DFB</span>
         <strong>Douglas Fight Promotion</strong>
       </div>
-
       <div class="page-loader__progress">
         <div class="page-loader__bar" id="pageLoaderBar"></div>
       </div>
-
       <div class="page-loader__meta">
         <span>Preparando experiência</span>
         <strong id="pageLoaderPercent">0%</strong>
@@ -48,12 +46,11 @@
       <a href="#inicio">Home</a>
       <a href="#atletas">Atletas</a>
       <a href="amadores.html">Amador</a>
-      <a href="#modalidades">Modalidades</a>
-      <a href="#patrocinadores">Patrocinadores</a>
+      <a href="#patrocinadores-cta">Patrocinadores</a>
+      <a href="#organizadores">Eventos</a>
+      <a href="#douglas">Douglas</a>
       <a href="#contato">Contato</a>
       <a href="https://wa.me/5511939223926" class="mobile-menu-cta">Falar com Douglas</a>
-      
-
     </nav>
 
     <div class="mobile-menu-backdrop" data-mobile-menu-backdrop aria-hidden="true"></div>
@@ -64,21 +61,14 @@
       <button type="button" data-modality="MMA" class="nav-filter">MMA</button>
       <button type="button" data-modality="Muay Thai" class="nav-filter">Muay Thai</button>
       <button type="button" data-modality="K1" class="nav-filter">K1</button>
-      
     </div>
 
     <a href="https://wa.me/5511939223926" class="navbar__cta" target="_blank" rel="noopener">Falar com Douglas</a>
   </header>
 
   <main>
+    <!-- 1. HERO -->
     <section class="hero" id="inicio">
-      <!--
-        Vídeo recomendado para o hero:
-        assets/videos/hero-fight.mp4
-        Poster recomendado:
-        assets/img/hero-poster.jpg
-        Direção: bastidores cinematográficos de luta, atletas treinando em ringue/tatame, luvas, bandagens, saco de pancada, boxe, MMA, K1, Muay Thai e preparação física. Ambiente escuro, luz dramática, suor, foco e clima de evento profissional. Ideal 1920x1080, MP4, 10 a 20 segundos, loop suave.
-      -->
       <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
         <source src="assets/videos/hero-fight.mp4" type="video/mp4">
       </video>
@@ -101,33 +91,63 @@
             <div><strong>MMA</strong><span>Completo</span></div>
             <div><strong>Muay Thai</strong><span>Combate em pé</span></div>
             <div><strong>K1</strong><span>Trocação</span></div>
-            
           </div>
         </div>
-          </div>
+      </div>
 
-          <div class="hero-person-card__plate">
-            <span>Douglas Fight Promotion</span>
-            <strong>Gestão, promoção e conexão de atletas</strong>
-          </div>
-        </aside>
+      <div class="hero-person-card__plate">
+        <span>Douglas Fight Promotion</span>
+        <strong>Gestão, promoção e conexão de atletas</strong>
       </div>
     </section>
 
+    <!-- 2. AUTORIDADE EM NÚMEROS -->
+    <section class="dfb-authority reveal" id="autoridade" aria-label="DFB em números">
+      <div class="dfb-authority__inner">
+        <div class="dfb-authority__header">
+          <span class="section-kicker">Por que a DFB</span>
+          <h2 class="dfb-authority__title">A DFB movimenta o fight game de verdade.</h2>
+          <p class="dfb-authority__lead">No esporte de combate, não vence só quem treina mais. Vence quem tem preparo, posicionamento, visibilidade e as pessoas certas abrindo as portas certas.</p>
+        </div>
 
+        <div class="dfb-authority__stats" aria-label="Números da DFB">
+          <div class="dfb-stat">
+            <strong class="dfb-stat__number" data-dfb-count="50" data-prefix="+">+50</strong>
+            <span class="dfb-stat__label">Atletas conectados</span>
+          </div>
+          <div class="dfb-stat">
+            <strong class="dfb-stat__number" data-dfb-count="30" data-prefix="+">+30</strong>
+            <span class="dfb-stat__label">Eventos parceiros</span>
+          </div>
+          <div class="dfb-stat">
+            <strong class="dfb-stat__number" data-dfb-count="100" data-prefix="+">+100</strong>
+            <span class="dfb-stat__label">Lutas negociadas</span>
+          </div>
+          <div class="dfb-stat">
+            <strong class="dfb-stat__number" data-dfb-count="4" data-prefix="">4</strong>
+            <span class="dfb-stat__label">Modalidades ativas</span>
+          </div>
+        </div>
 
+        <div class="dfb-authority__tags" aria-label="Detalhes DFB">
+          <span>Rede ativa com treinadores, promotores e organizadores</span>
+          <span>MMA • Muay Thai • Boxe • K1</span>
+        </div>
+      </div>
+    </section>
 
+    <!-- 3. ELENCO / ATLETAS -->
     <section class="catalog-shell" id="patrocinadores">
       <aside class="sponsors-rail sponsors-rail--left" data-sponsor-rail aria-label="Patrocinadores esquerda">
-        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-01.png" alt="Patrocinador 01"><span>Patrocinador oficial</span></a>
-        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-02.png" alt="Patrocinador 02"><span>Espaço disponível</span></a>
+        <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-01.png" alt="Patrocinador 01"><span>Patrocinador oficial</span></a>
+        <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-02.png" alt="Patrocinador 02"><span>Espaço disponível</span></a>
       </aside>
 
       <section class="fighters-section" id="atletas">
         <div class="section-header reveal">
-          <span>Catálogo DFB</span>
+          <span>Elenco DFB</span>
           <h2>Atletas representados</h2>
-          <p>Explore atletas por modalidade e abra perfis completos com história, cartel, fotos e vídeo.</p>
+          <p>Aqui não estão apenas lutadores. Estão nomes em construção, prontos para representar eventos, marcas e academias com profissionalismo.</p>
         </div>
 
         <div class="modality-filters reveal" data-modality-filters>
@@ -136,40 +156,131 @@
           <button type="button" class="modality-filter" data-modality="MMA">MMA</button>
           <button type="button" class="modality-filter" data-modality="Muay Thai">Muay Thai</button>
           <button type="button" class="modality-filter" data-modality="K1">K1</button>
-          
         </div>
 
         <div class="fighters-rows" id="fightersRows" aria-live="polite"></div>
       </section>
 
       <aside class="sponsors-rail sponsors-rail--right" data-sponsor-rail aria-label="Patrocinadores direita">
-        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-03.png" alt="Patrocinador 03"><span>Apoio premium</span></a>
-        <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-04.png" alt="Patrocinador 04"><span>Espaço disponível</span></a>
+        <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-03.png" alt="Patrocinador 03"><span>Apoio premium</span></a>
+        <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-04.png" alt="Patrocinador 04"><span>Espaço disponível</span></a>
       </aside>
     </section>
 
     <section class="mobile-sponsors" aria-label="Patrocinadores mobile">
-      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-01.png" alt="Patrocinador 01"><span>Patrocinador oficial</span></a>
-      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-02.png" alt="Patrocinador 02"><span>Espaço disponível</span></a>
-      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-03.png" alt="Patrocinador 03"><span>Apoio premium</span></a>
-      <a href="#contato" class="sponsor-card"><img src="assets/img/sponsors/sponsor-04.png" alt="Patrocinador 04"><span>Espaço disponível</span></a>
+      <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-01.png" alt="Patrocinador 01"><span>Patrocinador oficial</span></a>
+      <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-02.png" alt="Patrocinador 02"><span>Espaço disponível</span></a>
+      <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-03.png" alt="Patrocinador 03"><span>Apoio premium</span></a>
+      <a href="#patrocinadores-cta" class="sponsor-card"><img src="assets/img/sponsors/sponsor-04.png" alt="Patrocinador 04"><span>Espaço disponível</span></a>
     </section>
 
-    <section id="contato" class="contact-cta reveal">
-      <span>Contato comercial</span>
-      <h2>Quer contratar, patrocinar ou negociar um atleta DFB?</h2>
-      <p>Entre em contato para eventos, lutas, patrocínios, parcerias e oportunidades comerciais.</p>
-      <a href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20Douglas.%20Vim%20pelo%20site%20DFB%20e%20quero%20falar%20sobre%20uma%20oportunidade%20comercial." class="btn btn-primary" target="_blank" rel="noopener">Falar com Douglas</a>
-    </section>
-  </main>
+    <!-- 4. PARA PATROCINADORES -->
+    <section class="dfb-sponsors-cta reveal" id="patrocinadores-cta" aria-label="Patrocínio DFB">
+      <div class="dfb-sponsors-cta__bg" aria-hidden="true"></div>
+      <div class="dfb-sponsors-cta__inner">
+        <div class="dfb-sponsors-cta__content">
+          <span class="section-kicker">Para marcas e patrocinadores</span>
+          <h2 class="dfb-sponsors-cta__title">Marcas fortes não patrocinam apenas atletas.<br>Elas compram presença, associação e atenção.</h2>
+          <p class="dfb-sponsors-cta__text">O público do fight é fiel, emocional e acompanha a jornada dos atletas de perto. Patrocinar a DFB significa entrar em um ecossistema com atletas em atividade, eventos presenciais, conteúdo digital e bastidores reais.</p>
 
-      <section class="founder-section" id="douglas">
+          <ul class="dfb-sponsors-cta__points" aria-label="Benefícios do patrocínio">
+            <li><span aria-hidden="true">✦</span> Atletas em atividade</li>
+            <li><span aria-hidden="true">✦</span> Eventos presenciais</li>
+            <li><span aria-hidden="true">✦</span> Conteúdo digital</li>
+            <li><span aria-hidden="true">✦</span> Bastidores reais</li>
+            <li><span aria-hidden="true">✦</span> Exposição de marca</li>
+            <li><span aria-hidden="true">✦</span> Associação com disciplina, força e superação</li>
+          </ul>
+
+          <a
+            href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20patrocinar%20a%20DFB%20e%20conhecer%20as%20oportunidades%20comerciais%20com%20atletas%20e%20eventos."
+            class="btn btn-primary dfb-sponsors-cta__btn"
+            target="_blank"
+            rel="noopener"
+            aria-label="Quero ser patrocinador da DFB"
+          >Quero ser patrocinador</a>
+        </div>
+
+        <div class="dfb-sponsors-cta__visual" aria-hidden="true">
+          <div class="dfb-sponsors-cta__badge">
+            <span>PATROCÍNIO</span>
+            <strong>DFB</strong>
+            <em>Ecossistema Fight</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MÉTODO DFB -->
+    <section class="dfb-method reveal" id="metodo" aria-label="Método DFB">
+      <div class="dfb-method__inner">
+        <div class="section-header">
+          <span>Como trabalhamos</span>
+          <h2>Método DFB de Conexão Competitiva</h2>
+          <p>A DFB atua em 4 frentes para conectar atletas a oportunidades reais.</p>
+        </div>
+
+        <div class="dfb-method__grid" role="list">
+          <article class="dfb-method__card" role="listitem">
+            <span class="dfb-method__num" aria-hidden="true">01</span>
+            <h3>Gestão de atletas</h3>
+            <p>Organização, direcionamento e posicionamento profissional para cada atleta do elenco.</p>
+          </article>
+          <article class="dfb-method__card" role="listitem">
+            <span class="dfb-method__num" aria-hidden="true">02</span>
+            <h3>Conexão com eventos</h3>
+            <p>Atletas certos para cards, lutas casadas e oportunidades pagas no cenário fight.</p>
+          </article>
+          <article class="dfb-method__card" role="listitem">
+            <span class="dfb-method__num" aria-hidden="true">03</span>
+            <h3>Promoção de imagem</h3>
+            <p>Conteúdo, presença digital, bastidores e construção de autoridade para o atleta.</p>
+          </article>
+          <article class="dfb-method__card" role="listitem">
+            <span class="dfb-method__num" aria-hidden="true">04</span>
+            <h3>Parcerias comerciais</h3>
+            <p>Aproximação entre marcas, atletas e eventos com potencial real de visibilidade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PARA ORGANIZADORES DE EVENTOS -->
+    <section class="dfb-organizers reveal" id="organizadores" aria-label="Para organizadores de eventos">
+      <div class="dfb-organizers__inner">
+        <div class="dfb-organizers__content">
+          <span class="section-kicker">Para organizadores</span>
+          <h2 class="dfb-organizers__title">Seu evento não precisa apenas de lutadores.<br>Precisa de nomes que aumentem o peso do card.</h2>
+          <p class="dfb-organizers__text">A DFB entrega atletas preparados, comprometidos e alinhados com o nível que um evento sério exige.</p>
+
+          <ul class="dfb-organizers__points" aria-label="O que a DFB oferece para eventos">
+            <li><span aria-hidden="true">✦</span> Atletas de diferentes modalidades</li>
+            <li><span aria-hidden="true">✦</span> Facilidade na negociação</li>
+            <li><span aria-hidden="true">✦</span> Perfis organizados por categoria</li>
+            <li><span aria-hidden="true">✦</span> Compromisso com data, peso e entrega</li>
+            <li><span aria-hidden="true">✦</span> Suporte promocional antes da luta</li>
+            <li><span aria-hidden="true">✦</span> Network real no cenário fight</li>
+          </ul>
+
+          <a
+            href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20quero%20conhecer%20os%20atletas%20dispon%C3%ADveis%20da%20DFB%20para%20montar%20ou%20fortalecer%20o%20card%20do%20meu%20evento."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+            aria-label="Quero atletas para meu evento"
+          >Quero atletas para meu evento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SOBRE DOUGLAS -->
+    <section class="founder-section" id="douglas">
       <div class="founder-bg" aria-hidden="true"></div>
 
       <div class="founder-grid">
         <div class="founder-visual" data-founder-parallax>
           <div class="founder-photo-card">
-            <img src="assets/img/fighters/douglas-hero.jpg" alt="Douglas Silva de Brito" loading="lazy">
+            <img src="assets/img/fighters/douglas-hero.jpg" alt="Douglas Silva de Brito — Fundador DFB" loading="lazy">
           </div>
 
           <div class="founder-signature-card" data-founder-reveal>
@@ -180,13 +291,10 @@
 
         <div class="founder-content">
           <span class="section-eyebrow" data-founder-reveal>Sobre Douglas</span>
-
-          <h2 data-founder-reveal>A experiência por trás da DFB.</h2>
+          <h2 data-founder-reveal>Douglas Silva: o homem por trás da conexão.</h2>
 
           <p class="founder-lead" data-founder-reveal>
-            Douglas Silva de Brito dedica sua vida ao alto rendimento no esporte de combate.
-            Com mais de 10 anos no mundo das lutas, atua na preparação técnica de atletas
-            amadores e profissionais de Boxe e MMA.
+            Douglas Silva vive o cenário fight por dentro. Conhece a realidade dos atletas, treinadores, eventos e marcas que querem entrar nesse mercado com seriedade. A DFB nasceu para resolver um problema claro: atleta talentoso sem gestão continua invisível.
           </p>
 
           <div class="founder-stats" data-founder-reveal>
@@ -194,12 +302,10 @@
               <strong data-count-to="10">0</strong>
               <span>anos nas lutas</span>
             </div>
-
             <div>
               <strong>Boxe</strong>
               <span>base técnica</span>
             </div>
-
             <div>
               <strong>MMA</strong>
               <span>alto rendimento</span>
@@ -211,10 +317,7 @@
               <span>01</span>
               <div>
                 <h3>Trajetória no combate</h3>
-                <p>
-                  Construiu sua caminhada através da disciplina, experiência prática e evolução
-                  constante dentro do cenário nacional.
-                </p>
+                <p>Construiu sua caminhada através da disciplina, experiência prática e evolução constante dentro do cenário nacional.</p>
               </div>
             </article>
 
@@ -222,10 +325,7 @@
               <span>02</span>
               <div>
                 <h3>Base técnica no Boxe</h3>
-                <p>
-                  Aluno de Ulisses Pereira, treinador do lendário Acelino Popó Freitas,
-                  Douglas desenvolveu uma base sólida no boxe.
-                </p>
+                <p>Aluno de Ulisses Pereira, treinador do lendário Acelino Popó Freitas, Douglas desenvolveu uma base sólida no boxe.</p>
               </div>
             </article>
 
@@ -233,32 +333,88 @@
               <span>03</span>
               <div>
                 <h3>Especialização em MMA</h3>
-                <p>
-                  Atualmente segue se especializando como treinador técnico de atletas
-                  de MMA profissional na Team Mineiro.
-                </p>
+                <p>Atualmente segue se especializando como treinador técnico de atletas de MMA profissional na Team Mineiro.</p>
               </div>
             </article>
 
             <article class="founder-step" data-founder-reveal>
               <span>04</span>
               <div>
-                <h3>A criação da DFB</h3>
-                <p>
-                  Ao perceber que muitos atletas talentosos não conseguem oportunidades
-                  por falta de visibilidade, suporte e conexão com grandes eventos,
-                  decidiu criar a Douglas Fight Promotion.
-                </p>
+                <h3>A missão da DFB</h3>
+                <p>Transformar preparo em oportunidade, talento em negociação e presença em autoridade no cenário fight.</p>
               </div>
             </article>
           </div>
 
+          <div class="founder-seal" data-founder-reveal aria-label="Fundador DFB">
+            <span>Fundador DFB</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- 8. RESULTADOS / PROVA SOCIAL -->
+    <section class="dfb-proof reveal" id="resultados" aria-label="DFB em campo">
+      <div class="dfb-proof__inner">
+        <div class="section-header">
+          <span>Prova social</span>
+          <h2>A DFB já está no campo de batalha.</h2>
+          <p>Bastidores, pesagens, lutas, vitórias, eventos, entrevistas, parceiros e momentos reais que mostram a DFB em ação.</p>
+        </div>
+
+        <div class="dfb-proof__grid" role="list">
+          <article class="dfb-proof__card" role="listitem">
+            <div class="dfb-proof__icon" aria-hidden="true">🥊</div>
+            <h3>Eventos</h3>
+            <p>Presença em cards, bastidores e negociações reais no cenário nacional.</p>
+          </article>
+          <article class="dfb-proof__card" role="listitem">
+            <div class="dfb-proof__icon" aria-hidden="true">🏆</div>
+            <h3>Atletas</h3>
+            <p>Talentos em preparação, competição e construção de carreira profissional.</p>
+          </article>
+          <article class="dfb-proof__card" role="listitem">
+            <div class="dfb-proof__icon" aria-hidden="true">🤝</div>
+            <h3>Parceiros</h3>
+            <p>Marcas e apoiadores entrando no ecossistema fight com a DFB.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. GALERIA (se existente no CSS original) -->
+    <!-- Mantida estrutura original, melhorada com novo texto -->
+    <section class="dfb-gallery-cta reveal" id="galeria" aria-label="Galeria DFB">
+      <div class="dfb-gallery-cta__inner">
+        <span class="section-kicker">Bastidores e arena</span>
+        <h2>Bastidores. Treino. Arena. Vitória.</h2>
+        <p>O fight não se vende apenas com currículo. Ele se vende com imagem, energia, presença e momentos que fazem o público sentir que está diante de algo grande.</p>
+      </div>
+    </section>
+
+    <!-- 10. PATROCINADORES E APOIADORES (original) -->
+    <!-- Mantido o catalog-shell original com sponsors rails -->
+
+    <!-- 11. CTA FINAL -->
+    <section id="contato" class="contact-cta reveal">
+      <span>Seja o próximo</span>
+      <h2>O próximo grande nome do fight pode estar a uma conexão de distância.</h2>
+      <p>Se você é organizador, patrocinador ou parceiro estratégico, fale com a DFB.</p>
+      <div class="contact-cta__actions">
+        <a
+          href="https://wa.me/5511939223926?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20DFB%20sobre%20atletas%2C%20eventos%20ou%20patroc%C3%ADnio."
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+          aria-label="Chamar a DFB no WhatsApp"
+        >Chamar no WhatsApp</a>
+        <a href="#atletas" class="btn btn-secondary">Ver atletas disponíveis</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. FOOTER (original, sem alterações) -->
   <footer class="footer footer-pro" id="footer">
-    <!-- Vídeo ideal: academia/ringue de luta em clima dark, movimento lento, sem texto/logos, MP4 otimizado para web. -->
     <div class="footer-video-bg" aria-hidden="true">
       <video class="footer-pro__video footer-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
         <source src="assets/videos/footer-fight.mp4" type="video/mp4">
@@ -288,7 +444,8 @@
           <a href="#inicio">Início</a>
           <a href="#atletas">Atletas</a>
           <a href="amadores.html">Amador</a>
-          <a href="#patrocinadores">Patrocinadores</a>
+          <a href="#patrocinadores-cta">Patrocinadores</a>
+          <a href="#organizadores">Eventos</a>
           <a href="#contato">Contato</a>
         </div>
 
@@ -312,9 +469,9 @@
         <span>Portfólio profissional de atletas de combate.</span>
       </div>
     </div>
-
   </footer>
 
+  <!-- MODAL (original, sem alterações) -->
   <div class="fighter-profile-modal" id="fighterProfileModal" aria-hidden="true">
     <div class="fighter-profile-modal__backdrop" data-close-fighter-modal></div>
 
