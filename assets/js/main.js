@@ -71,6 +71,36 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-07-training.mp4', poster: 'assets/img/fighters/atleta-07-training-poster.jpg', description: 'Sombra, saco, manopla e rotina de preparação.' }
     ]
   },
+  {
+    id: 'atleta-08',
+    name: 'Lucas Reis Sousa',
+    nickname: 'Terremoto',
+    age: 24,
+    modality: 'MMA',
+    category: '57 a 61 kg',
+    record: '7V • 9D • 0E',
+    wins: 7,
+    losses: 9,
+    draws: 0,
+    status: 'Terremoto',
+    location: 'Ananindeua, Pará',
+    team: 'Team Fein',
+    stance: 'Destro',
+    featured: true,
+    shortBio: 'Atleta de MMA destro, conhecido como Terremoto, com presença intensa e experiência competitiva representando Ananindeua, Pará.',
+    story: 'Lucas Reis Sousa, o Terremoto, é um atleta de MMA de 24 anos, destro, natural de Ananindeua, Pará. Com peso entre 57 e 61 kg e cartel de 7 vitórias e 9 derrotas, representa a equipe Team Fein e carrega uma trajetória marcada por resistência, evolução e entrega dentro do combate. Seu perfil une experiência real de luta, postura competitiva e vontade constante de crescer no cenário nacional.',
+    avatar: 'assets/img/fighters/atleta-08-cover.jpg',
+    portrait: 'assets/img/fighters/atleta-08-portrait.jpg',
+    gallery: [
+      'assets/img/fighters/atleta-08-gallery-01.jpg',
+      'assets/img/fighters/atleta-08-gallery-02.jpg',
+      'assets/img/fighters/atleta-08-gallery-03.jpg'
+    ],
+    videos: [
+      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-08-highlight.mp4', poster: 'assets/img/fighters/atleta-08-video-poster.jpg', description: 'Melhores momentos, movimentação, golpes e presença do atleta em combate.' },
+      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-08-training.mp4', poster: 'assets/img/fighters/atleta-08-training-poster.jpg', description: 'Preparação técnica, rotina de treino, bastidores e evolução do atleta.' }
+    ]
+  },
   
 ];
 

@@ -3978,3 +3978,15 @@ body.is-loaded .hero-3d-fighter {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Atleta 08 - correção final no modal */
+.fighter-profile-modal__media img[src*="atleta-08-portrait.jpg"],
+.fighter-portfolio-modal__media img[src*="atleta-08-portrait.jpg"],
+.fighter-modal__media img[src*="atleta-08-portrait.jpg"] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom 54%;
+  transform: scale(1.25) translateY(8px) !important;
+  transform-origin: center center;
+}
