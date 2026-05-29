@@ -58,28 +58,7 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-03-training.mp4', poster: 'assets/img/fighters/atleta-03-training-poster.jpg', description: 'Rotina no tatame, rolas, preparação técnica e bastidores.' }
     ]
   },
-  {
-    id: 'atleta-04', name: 'Nome do Atleta 04', nickname: 'Thai Machine', modality: 'Muay Thai', category: 'Até 70kg', record: '10V • 2D', status: 'Destaque', location: 'São Bernardo, SP', featured: false,
-    shortBio: 'Atleta de striking com chutes fortes, joelhadas e ritmo alto para eventos de luta em pé.',
-    story: 'Insira a história completa do atleta, origem na modalidade, equipe, cartel, eventos disputados e diferenciais de estilo.',
-    avatar: 'assets/img/fighters/atleta-04-cover.jpg', portrait: 'assets/img/fighters/atleta-04-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-04-gallery-01.jpg', 'assets/img/fighters/atleta-04-gallery-02.jpg', 'assets/img/fighters/atleta-04-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-04-highlight.mp4', poster: 'assets/img/fighters/atleta-04-video-poster.jpg', description: 'Chutes, joelhadas, clinch, entradas e trechos de combate.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-04-training.mp4', poster: 'assets/img/fighters/atleta-04-training-poster.jpg', description: 'Manopla, saco, sombra, sparring e preparação física.' }
-    ]
-  },
-  {
-    id: 'atleta-05', name: 'Nome do Atleta 05', nickname: 'The Hunter', modality: 'K1', category: 'Peso Meio-Médio', record: '9V • 1D', status: 'Promessa', location: 'Santo André, SP', featured: false,
-    shortBio: 'Atleta de K1 com trocação limpa, bons ângulos e ótimo potencial para eventos profissionais.',
-    story: 'Troque este texto pela narrativa do atleta, incluindo início, principais resultados, estilo, rotina de treino e objetivo no esporte.',
-    avatar: 'assets/img/fighters/atleta-05-cover.jpg', portrait: 'assets/img/fighters/atleta-05-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-05-gallery-01.jpg', 'assets/img/fighters/atleta-05-gallery-02.jpg', 'assets/img/fighters/atleta-05-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-05-highlight.mp4', poster: 'assets/img/fighters/atleta-05-video-poster.jpg', description: 'Sequências de striking, combinações e melhores ações.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-05-training.mp4', poster: 'assets/img/fighters/atleta-05-training-poster.jpg', description: 'Preparação, treino técnico e bastidores da rotina.' }
-    ]
-  },
+  
 
   {
     id: 'atleta-07', name: 'Clebison dos Santos', nickname: 'loro José', modality: 'MMA', category: 'Peso Mosca', record: '6V • 2D • 0E', status: 'Soco forte', location: 'curionopolis Pará', featured: true,
@@ -93,51 +72,6 @@ const fighters = [
     ]
   },
   
-  {
-    id: 'atleta-06', name: 'Nome do Atleta 06', nickname: 'Grappler', modality: 'MMA', category: 'Até 77kg', record: '11V • 4D', status: 'Profissional', location: 'Campinas, SP', featured: false,
-    shortBio: 'Base forte de quedas, controle e pressão constante para dominar o ritmo do combate.',
-    story: 'Adicione histórico de competições, transição para luta profissional, rotina de treino e principais metas do atleta.',
-    avatar: 'assets/img/fighters/atleta-06-cover.jpg', portrait: 'assets/img/fighters/atleta-06-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-06-gallery-01.jpg', 'assets/img/fighters/atleta-06-gallery-02.jpg', 'assets/img/fighters/atleta-06-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-06-highlight.mp4', poster: 'assets/img/fighters/atleta-06-video-poster.jpg', description: 'Entradas de queda, controle posicional e transições.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-06-training.mp4', poster: 'assets/img/fighters/atleta-06-training-poster.jpg', description: 'Drills de wrestling, preparação física e bastidores.' }
-    ]
-  },
-  
-  {
-    id: 'atleta-08', name: 'Nome do Atleta 08', nickname: 'Samurai', modality: 'MMA', category: 'Peso Galo', record: '7V • 3D', status: 'Profissional', location: 'Jundiaí, SP', featured: false,
-    shortBio: 'Atleta rápido, técnico e com boa capacidade de adaptação em pé e no solo.',
-    story: 'Insira detalhes da trajetória, eventos, equipe, especialidades e próximos passos na carreira esportiva.',
-    avatar: 'assets/img/fighters/atleta-08-cover.jpg', portrait: 'assets/img/fighters/atleta-08-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-08-gallery-01.jpg', 'assets/img/fighters/atleta-08-gallery-02.jpg', 'assets/img/fighters/atleta-08-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-08-highlight.mp4', poster: 'assets/img/fighters/atleta-08-video-poster.jpg', description: 'Melhores momentos de luta, treino e presença no cage.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-08-training.mp4', poster: 'assets/img/fighters/atleta-08-training-poster.jpg', description: 'Preparação técnica, física e bastidores.' }
-    ]
-  },
-  {
-    id: 'atleta-09', name: 'Nome do Atleta 09', nickname: 'Finalizador', modality: 'MMA', category: 'Peso Médio', record: '18V • 5D', status: 'Campeão', location: 'São Paulo, SP', featured: false,
-    shortBio: 'Especialista em finalizações, com leitura técnica e presença competitiva forte no tatame.',
-    story: 'Inclua graduação, campeonatos, equipe, conquistas, estilo de luta e objetivos profissionais.',
-    avatar: 'assets/img/fighters/atleta-09-cover.jpg', portrait: 'assets/img/fighters/atleta-09-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-09-gallery-01.jpg', 'assets/img/fighters/atleta-09-gallery-02.jpg', 'assets/img/fighters/atleta-09-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-09-highlight.mp4', poster: 'assets/img/fighters/atleta-09-video-poster.jpg', description: 'Finalizações, movimentações e momentos competitivos.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-09-training.mp4', poster: 'assets/img/fighters/atleta-09-training-poster.jpg', description: 'Treino no tatame, drills e rotina de preparação.' }
-    ]
-  },
-  {
-    id: 'atleta-10', name: 'Nome do Atleta 10', nickname: 'Furacão', modality: 'Muay Thai', category: 'Até 63kg', record: '12V • 2D', status: 'Destaque', location: 'Diadema, SP', featured: false,
-    shortBio: 'Atleta de ritmo intenso, forte visual de campanha e perfil ideal para eventos de trocação.',
-    story: 'Adicione a história real, cartel, principais eventos, equipe, conquistas e visão de futuro do atleta.',
-    avatar: 'assets/img/fighters/atleta-10-cover.jpg', portrait: 'assets/img/fighters/atleta-10-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-10-gallery-01.jpg', 'assets/img/fighters/atleta-10-gallery-02.jpg', 'assets/img/fighters/atleta-10-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-10-highlight.mp4', poster: 'assets/img/fighters/atleta-10-video-poster.jpg', description: 'Melhores golpes, entradas e trechos de combate.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-10-training.mp4', poster: 'assets/img/fighters/atleta-10-training-poster.jpg', description: 'Sombra, manopla, sparring e bastidores de treino.' }
-    ]
-  }
 ];
 
 window.DFB_FIGHTERS = fighters;
