@@ -41,7 +41,7 @@ const fighters = [
     shortBio: 'Lutador versátil, boa leitura de luta e combinação entre trocação estratégicas e visão de luta.',
     story: 'Substitua este texto pela trajetória real do atleta. Destaque origem, treinos, evolução, lutas marcantes, disciplina e próximos passos dentro da modalidade.',
     avatar: 'assets/img/fighters/atleta-02-cover.jpg', portrait: 'assets/img/fighters/atleta-02-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-02-gallery-01.jpg', 'assets/img/fighters/atleta-02-gallery-02.jpg', 'assets/img/fighters/atleta-02-gallery-03.jpg'],
+    gallery: ['assets/img/fighters/atleta-02-gallery-01.jpg', 'assets/img/fighters/atleta-02-gallery-02.jpg', 'assets/img/fighters/atleta-02-gallery-03.jpg', 'assets/img/fighters/atleta-02-gallery-04.jpg', 'assets/img/fighters/atleta-02-gallery-05.jpg'],
     videos: [
       { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-02-highlight.mp4', poster: 'assets/img/fighters/atleta-02-video-poster.jpg', description: 'Cortes rápidos com movimentação, quedas, golpes e momentos fortes.' },
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-02-training.mp4', poster: 'assets/img/fighters/atleta-02-training-poster.jpg', description: 'Rotina de preparação em academia, sparring, manopla e condicionamento.' }
@@ -94,7 +94,8 @@ const fighters = [
     gallery: [
       'assets/img/fighters/atleta-08-gallery-01.jpg',
       'assets/img/fighters/atleta-08-gallery-02.jpg',
-      'assets/img/fighters/atleta-08-gallery-03.jpg'
+      'assets/img/fighters/atleta-08-gallery-03.jpg',
+      'assets/img/fighters/atleta-08-gallery-04.jpg'
     ],
     videos: [
       { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-08-highlight.mp4', poster: 'assets/img/fighters/atleta-08-video-poster.jpg', description: 'Melhores momentos, movimentação, golpes e presença do atleta em combate.' },
