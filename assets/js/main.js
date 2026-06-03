@@ -102,6 +102,36 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-08-training.mp4', poster: 'assets/img/fighters/atleta-08-training-poster.jpg', description: 'Preparação técnica, rotina de treino, bastidores e evolução do atleta.' }
     ]
   },
+  {
+    id: 'atleta-09',
+    name: 'Emanuel Oliveira Ferreira',
+    nickname: 'Búfalo',
+    age: 28,
+    modality: 'Boxe',
+    category: '66 a 69 kg',
+    record: '4V • 0D • 0E',
+    wins: 4,
+    losses: 0,
+    draws: 0,
+    status: 'Búfalo',
+    location: 'Belém, PA',
+    team: '',
+    stance: '',
+    featured: true,
+    shortBio: 'Lutador agressivo, conhecido por impor ritmo de confronto e buscar sempre o nocaute.',
+    story: 'Emanuel Oliveira Ferreira, o Búfalo, é um atleta de 28 anos natural de Belém, Pará, com categoria entre 66 e 69 kg. Invicto em 4 lutas, com 4 vitórias, construiu sua identidade no combate com agressividade, pressão constante e foco no nocaute. Detentor de diversos nocautes no profissional e no amador, carrega um perfil de alto impacto visual e esportivo para eventos, promoções e oportunidades no cenário nacional.',
+    avatar: 'assets/img/fighters/atleta-09-cover.jpg',
+    portrait: 'assets/img/fighters/atleta-09-portrait.jpg',
+    gallery: [
+      'assets/img/fighters/atleta-09-gallery-01.jpg',
+      'assets/img/fighters/atleta-09-gallery-02.jpg',
+      'assets/img/fighters/atleta-09-gallery-03.jpg'
+    ],
+    videos: [
+      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta--highlight.mp4', poster: 'assets/img/fighters/atleta--video-poster.jpg', description: 'Melhores momentos, movimentação, golpes e presença do atleta em combate.' },
+      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta--training.mp4', poster: 'assets/img/fighters/atleta--training-poster.jpg', description: 'Preparação técnica, rotina de treino, bastidores e evolução do atleta.' }
+    ]
+  },
   
 ];
 
