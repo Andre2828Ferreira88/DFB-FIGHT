@@ -41,13 +41,25 @@ const fighters = [
     shortBio: 'Lutador versátil, boa leitura de luta e combinação entre trocação estratégicas e visão de luta.',
     story: 'Substitua este texto pela trajetória real do atleta. Destaque origem, treinos, evolução, lutas marcantes, disciplina e próximos passos dentro da modalidade.',
     avatar: 'assets/img/fighters/atleta-02-cover.jpg', portrait: 'assets/img/fighters/atleta-02-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-02-gallery-01.jpg', 'assets/img/fighters/atleta-02-gallery-02.jpg', 'assets/img/fighters/atleta-02-gallery-03.jpg', 'assets/img/fighters/atleta-02-gallery-04.jpg', 'assets/img/fighters/atleta-02-gallery-05.jpg'],
+    gallery: ['assets/img/fighters/atleta-02-gallery-01.jpg', 'assets/img/fighters/atleta-02-gallery-02.jpg', 'assets/img/fighters/atleta-02-gallery-03.jpg'],
     videos: [
       { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-02-highlight.mp4', poster: 'assets/img/fighters/atleta-02-video-poster.jpg', description: 'Cortes rápidos com movimentação, quedas, golpes e momentos fortes.' },
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-02-training.mp4', poster: 'assets/img/fighters/atleta-02-training-poster.jpg', description: 'Rotina de preparação em academia, sparring, manopla e condicionamento.' }
     ]
   },
- 
+  {
+    id: 'atleta-03', name: 'Cleilson da Silva', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso-Galo', record: '9V • 5D', status: 'ARANHA', location: 'Tucuruí Pará', featured: true,
+    shortBio: 'Competidor técnico, forte no controle posicional e com histórico competitivo em torneios regionais.',
+    story: 'Com um cartel de 9 vitórias e 5 derrotas, Cleilson demonstra experiência, resistência e evolução constante na modalidade. Um dos seus grandes diferenciais é lutar com as duas bases, podendo atuar tanto como destro quanto canhoto, o que torna seu jogo imprevisível e estratégico durante os combates.Representando a força do Pará no MMA, Cleilson carrega no cage a disciplina do treinamento, a garra da sua equipe e a determinação de continuar crescendo no esporte. Seu estilo combina agressividade, adaptação e inteligência de luta, características que fazem dele um atleta perigoso e preparado para grandes desafios.',
+    avatar: 'assets/img/fighters/atleta-03-cover.jpg', portrait: 'assets/img/fighters/atleta-03-portrait.jpg',
+    gallery: ['assets/img/fighters/atleta-03-gallery-01.jpg', 'assets/img/fighters/atleta-03-gallery-02.jpg', 'assets/img/fighters/atleta-03-gallery-03.jpg'],
+    videos: [
+      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-03-highlight.mp4', poster: 'assets/img/fighters/atleta-03-video-poster.jpg', description: 'Raspagens, finalizações, passagens e conquistas no tatame.' },
+      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-03-training.mp4', poster: 'assets/img/fighters/atleta-03-training-poster.jpg', description: 'Rotina no tatame, rolas, preparação técnica e bastidores.' }
+    ]
+  },
+  
+
   {
     id: 'atleta-07', name: 'Clebison dos Santos', nickname: 'loro José', modality: 'MMA', category: 'Peso Mosca', record: '6V • 2D • 0E', status: 'Soco forte', location: 'curionopolis Pará', featured: true,
     shortBio: 'Loro José se destaca por unir a técnica refinada do Jiu-Jitsu com um estilo de combate agressivo e direto. Lutador destro, ele possui presença forte, postura competitiva e um jogo de pressão que transmite intensidade desde o primeiro contato.',
@@ -59,65 +71,16 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-07-training.mp4', poster: 'assets/img/fighters/atleta-07-training-poster.jpg', description: 'Sombra, saco, manopla e rotina de preparação.' }
     ]
   },
+
   {
-    id: 'atleta-08',
-    name: 'Lucas Reis Sousa',
-    nickname: 'Terremoto',
-    age: 24,
-    modality: 'MMA',
-    category: '57 a 61 kg',
-    record: '7V • 9D • 0E',
-    wins: 7,
-    losses: 9,
-    draws: 0,
-    status: 'Terremoto',
-    location: 'Ananindeua, Pará',
-    team: 'Team Fein',
-    stance: 'Destro',
-    featured: true,
-    shortBio: 'Atleta de MMA destro, conhecido como Terremoto, com presença intensa e experiência competitiva representando Ananindeua, Pará.',
-    story: 'Lucas Reis Sousa, o Terremoto, é um atleta de MMA de 24 anos, destro, natural de Ananindeua, Pará. Com peso entre 57 e 61 kg e cartel de 7 vitórias e 9 derrotas, representa a equipe Team Fein e carrega uma trajetória marcada por resistência, evolução e entrega dentro do combate. Seu perfil une experiência real de luta, postura competitiva e vontade constante de crescer no cenário nacional.',
-    avatar: 'assets/img/fighters/atleta-08-cover.jpg',
-    portrait: 'assets/img/fighters/atleta-08-portrait.jpg',
-    gallery: [
-      'assets/img/fighters/atleta-08-gallery-01.jpg',
-      'assets/img/fighters/atleta-08-gallery-02.jpg',
-      'assets/img/fighters/atleta-08-gallery-03.jpg',
-      'assets/img/fighters/atleta-08-gallery-04.jpg'
-    ],
+    id: 'atleta-10', name: 'Éder José de Jesus Meneses', nickname: '', modality: 'MMA', modalities: ['MMA', 'Muay Thai'], category: '66 a 69 kg', record: '4V • 2D • 0E', status: 'Profissional', location: 'Belém, PA', featured: true,
+    shortBio: 'Atleta de MMA e Muay Thai, experiente, competitivo e com histórico de vitórias expressivas na trocação.',
+    story: 'Éder José de Jesus Meneses é um atleta de combate com experiência em diferentes modalidades. No Boxe, possui 6 vitórias e 2 derrotas. No Muay Thai, soma 26 vitórias e 3 derrotas. No MMA, registra 4 vitórias e 2 derrotas. Sua trajetória mostra versatilidade, resistência e presença competitiva tanto na luta em pé quanto no cenário completo do combate.',
+    avatar: 'assets/img/fighters/atleta-10-cover.jpg', portrait: 'assets/img/fighters/atleta-10-portrait.jpg',
+    gallery: ['assets/img/fighters/atleta-10-gallery-01.jpg', 'assets/img/fighters/atleta-10-gallery-02.jpg'],
     videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-08-highlight.mp4', poster: 'assets/img/fighters/atleta-08-video-poster.jpg', description: 'Melhores momentos, movimentação, golpes e presença do atleta em combate.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-08-training.mp4', poster: 'assets/img/fighters/atleta-08-training-poster.jpg', description: 'Preparação técnica, rotina de treino, bastidores e evolução do atleta.' }
-    ]
-  },
-  {
-    id: 'atleta-09',
-    name: 'Emanuel Oliveira Ferreira',
-    nickname: 'Búfalo',
-    age: 28,
-    modality: 'Boxe',
-    category: '66 a 69 kg',
-    record: '4V • 0D • 0E',
-    wins: 4,
-    losses: 0,
-    draws: 0,
-    status: 'Búfalo',
-    location: 'Belém, PA',
-    team: '',
-    stance: '',
-    featured: true,
-    shortBio: 'Lutador agressivo, conhecido por impor ritmo de confronto e buscar sempre o nocaute.',
-    story: 'Emanuel Oliveira Ferreira, o Búfalo, é um atleta de 28 anos natural de Belém, Pará, com categoria entre 66 e 69 kg. Invicto em 4 lutas, com 4 vitórias, construiu sua identidade no combate com agressividade, pressão constante e foco no nocaute. Detentor de diversos nocautes no profissional e no amador, carrega um perfil de alto impacto visual e esportivo para eventos, promoções e oportunidades no cenário nacional.',
-    avatar: 'assets/img/fighters/atleta-09-cover.jpg',
-    portrait: 'assets/img/fighters/atleta-09-portrait.jpg',
-    gallery: [
-      'assets/img/fighters/atleta-09-gallery-01.jpg',
-      'assets/img/fighters/atleta-09-gallery-02.jpg',
-      'assets/img/fighters/atleta-09-gallery-03.jpg'
-    ],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta--highlight.mp4', poster: 'assets/img/fighters/atleta--video-poster.jpg', description: 'Melhores momentos, movimentação, golpes e presença do atleta em combate.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta--training.mp4', poster: 'assets/img/fighters/atleta--training-poster.jpg', description: 'Preparação técnica, rotina de treino, bastidores e evolução do atleta.' }
+      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-10-highlight.mp4', poster: 'assets/img/fighters/atleta-10-video-poster.jpg', description: 'Melhores momentos de luta, movimentação, trocação e presença competitiva.' },
+      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-10-training.mp4', poster: 'assets/img/fighters/atleta-10-training-poster.jpg', description: 'Treinos, preparação técnica, bastidores e rotina de evolução.' }
     ]
   },
   
@@ -716,7 +679,7 @@ function renderFightersRows(modality = ALL_MODALITY) {
 }
 
 function getFighterGroups(modality) {
-  const allowedFighters = fighters.filter((fighter) => isAllowedModality(fighter.modality));
+  const allowedFighters = fighters.filter((fighter) => getFighterResolvedModalities(fighter).length);
 
   if (modality !== ALL_MODALITY) {
     return [{ title: modality, items: filterFightersByModality(modality) }].filter(group => group.items.length);
@@ -754,6 +717,37 @@ function isAllowedModality(modality) {
   return Boolean(resolveModality(modality));
 }
 
+function getResolvedModalitiesFromValue(value) {
+  const rawItems = Array.isArray(value)
+    ? value
+    : String(value || '').split(/[,/|•]+/);
+
+  const modalities = rawItems
+    .map((item) => resolveModality(item) || item)
+    .filter(Boolean)
+    .map((item) => ALLOWED_MODALITIES.find((allowed) => normalizeModality(allowed) === normalizeModality(item)) || item)
+    .filter((item, index, array) => array.findIndex((candidate) => normalizeModality(candidate) === normalizeModality(item)) === index)
+    .filter((item) => ALLOWED_MODALITIES.some((allowed) => normalizeModality(allowed) === normalizeModality(item)));
+
+  return modalities;
+}
+
+function getFighterResolvedModalities(fighter) {
+  if (!fighter) return [];
+
+  if (Array.isArray(fighter.modalities) && fighter.modalities.length) {
+    return getResolvedModalitiesFromValue(fighter.modalities);
+  }
+
+  return getResolvedModalitiesFromValue(fighter.modality);
+}
+
+function fighterMatchesModality(fighter, modality) {
+  const normalizedFilter = normalizeModality(modality);
+
+  return getFighterResolvedModalities(fighter).some((item) => normalizeModality(item) === normalizedFilter);
+}
+
 function parseFighterRecord(recordText = '') {
   const text = String(recordText || '').toUpperCase();
 
@@ -768,7 +762,7 @@ function renderFighterCard(fighter, index) {
   const delay = Math.min(index * 70, 420);
   const fighterId = escapeAttr(fighter.id || '');
   const name = fighter.name || 'Atleta DFB';
-  const modality = resolveModality(fighter.modality) || fighter.modality || '';
+  const modality = getFighterResolvedModalities(fighter).join(' • ') || resolveModality(fighter.modality) || fighter.modality || '';
   const category = fighter.category || '';
   const image = fighter.cover || fighter.avatar || fighter.portrait || 'assets/img/fighters/atleta-01-cover.jpg';
   const record = parseFighterRecord(fighter.record || fighter.cartel || '');
@@ -824,15 +818,11 @@ function renderFighterCard(fighter, index) {
 }
 
 function filterFightersByModality(modality) {
-  const allowedFighters = fighters.filter((fighter) => isAllowedModality(fighter.modality));
+  const allowedFighters = fighters.filter((fighter) => getFighterResolvedModalities(fighter).length);
 
   if (modality === ALL_MODALITY) return allowedFighters;
 
-  const normalizedFilter = normalizeModality(modality);
-
-  return allowedFighters.filter((fighter) => {
-    return normalizeModality(resolveModality(fighter.modality)) === normalizedFilter;
-  });
+  return allowedFighters.filter((fighter) => fighterMatchesModality(fighter, modality));
 }
 
 function initModalityFilters() {
@@ -1022,7 +1012,7 @@ function openFighterProfile(fighterId) {
     portrait.alt = fighter.name || 'Atleta DFB';
   }
 
-  if (modality) modality.textContent = resolveModality(fighter.modality) || fighter.modality || 'Atleta DFB';
+  if (modality) modality.textContent = getFighterResolvedModalities(fighter).join(' • ') || resolveModality(fighter.modality) || fighter.modality || 'Atleta DFB';
   if (name) name.textContent = fighter.nickname ? `${fighter.name} “${fighter.nickname}”` : (fighter.name || 'Atleta DFB');
   if (shortBio) shortBio.textContent = fighter.shortBio || 'Perfil profissional do atleta DFB.';
   if (story) story.textContent = fighter.story || 'História do atleta em breve.';
@@ -1073,7 +1063,7 @@ function closeFighterProfile() {
 
 function renderFighterStats(fighter) {
   const stats = [
-    { label: 'Modalidade', value: resolveModality(fighter.modality) || fighter.modality },
+    { label: 'Modalidade', value: getFighterResolvedModalities(fighter).join(' • ') || resolveModality(fighter.modality) || fighter.modality },
     { label: 'Categoria', value: fighter.category },
     { label: 'Cartel', value: fighter.record },
     { label: 'Base', value: fighter.location }
