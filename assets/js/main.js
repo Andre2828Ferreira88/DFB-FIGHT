@@ -47,19 +47,7 @@ const fighters = [
       { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-02-training.mp4', poster: 'assets/img/fighters/atleta-02-training-poster.jpg', description: 'Rotina de preparação em academia, sparring, manopla e condicionamento.' }
     ]
   },
-  {
-    id: 'atleta-03', name: 'Cleilson da Silva', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso-Galo', record: '9V • 5D', status: 'ARANHA', location: 'Tucuruí Pará', featured: true,
-    shortBio: 'Competidor técnico, forte no controle posicional e com histórico competitivo em torneios regionais.',
-    story: 'Com um cartel de 9 vitórias e 5 derrotas, Cleilson demonstra experiência, resistência e evolução constante na modalidade. Um dos seus grandes diferenciais é lutar com as duas bases, podendo atuar tanto como destro quanto canhoto, o que torna seu jogo imprevisível e estratégico durante os combates.Representando a força do Pará no MMA, Cleilson carrega no cage a disciplina do treinamento, a garra da sua equipe e a determinação de continuar crescendo no esporte. Seu estilo combina agressividade, adaptação e inteligência de luta, características que fazem dele um atleta perigoso e preparado para grandes desafios.',
-    avatar: 'assets/img/fighters/atleta-03-cover.jpg', portrait: 'assets/img/fighters/atleta-03-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-03-gallery-01.jpg', 'assets/img/fighters/atleta-03-gallery-02.jpg', 'assets/img/fighters/atleta-03-gallery-03.jpg'],
-    videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-03-highlight.mp4', poster: 'assets/img/fighters/atleta-03-video-poster.jpg', description: 'Raspagens, finalizações, passagens e conquistas no tatame.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-03-training.mp4', poster: 'assets/img/fighters/atleta-03-training-poster.jpg', description: 'Rotina no tatame, rolas, preparação técnica e bastidores.' }
-    ]
-  },
-  
-
+ 
   {
     id: 'atleta-07', name: 'Clebison dos Santos', nickname: 'loro José', modality: 'MMA', category: 'Peso Mosca', record: '6V • 2D • 0E', status: 'Soco forte', location: 'curionopolis Pará', featured: true,
     shortBio: 'Loro José se destaca por unir a técnica refinada do Jiu-Jitsu com um estilo de combate agressivo e direto. Lutador destro, ele possui presença forte, postura competitiva e um jogo de pressão que transmite intensidade desde o primeiro contato.',
