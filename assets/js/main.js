@@ -94,6 +94,7 @@ const fighters = [
     portrait: 'assets/img/fighters/atleta-10-portrait.jpg',
     gallery: [
       'assets/img/fighters/atleta-10-gallery-01.jpg',
+      'assets/img/fighters/atleta-10-gallery-03.jpg',
       'assets/img/fighters/atleta-10-gallery-02.jpg'
     ],
     videos: [
