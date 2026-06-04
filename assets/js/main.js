@@ -852,15 +852,29 @@ function renderFighterCard(fighter, index) {
   `;
 }
 
+function getFighterModalities(fighter) {
+  const modalities = Array.isArray(fighter.modalities) && fighter.modalities.length
+    ? fighter.modalities
+    : [fighter.modality];
+
+  return modalities
+    .map((modality) => resolveModality(modality))
+    .filter(Boolean);
+}
+
 function filterFightersByModality(modality) {
-  const allowedFighters = fighters.filter((fighter) => isAllowedModality(fighter.modality));
+  const allowedFighters = fighters.filter((fighter) => {
+    return getFighterModalities(fighter).length > 0;
+  });
 
   if (modality === ALL_MODALITY) return allowedFighters;
 
   const normalizedFilter = normalizeModality(modality);
 
   return allowedFighters.filter((fighter) => {
-    return normalizeModality(resolveModality(fighter.modality)) === normalizedFilter;
+    return getFighterModalities(fighter).some((fighterModality) => {
+      return normalizeModality(fighterModality) === normalizedFilter;
+    });
   });
 }
 
