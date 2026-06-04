@@ -48,14 +48,14 @@ const fighters = [
     ]
   },
   {
-    id: 'atleta-03', name: 'Cleilson da Silva', nickname: 'Faixa Preta', modality: 'MMA', category: 'Peso-Galo', record: '9V • 5D', status: 'ARANHA', location: 'Tucuruí Pará', featured: true,
+    id: 'atleta-03', name: 'Lucas Reis Sousa', nickname: 'terremoto', modality: 'MMA', category: '57 a 61', record: '7V • 9D', status: 'Destaque', location: 'Ananindeua Pará', featured: true,
     shortBio: 'Competidor técnico, forte no controle posicional e com histórico competitivo em torneios regionais.',
-    story: 'Com um cartel de 9 vitórias e 5 derrotas, Cleilson demonstra experiência, resistência e evolução constante na modalidade. Um dos seus grandes diferenciais é lutar com as duas bases, podendo atuar tanto como destro quanto canhoto, o que torna seu jogo imprevisível e estratégico durante os combates.Representando a força do Pará no MMA, Cleilson carrega no cage a disciplina do treinamento, a garra da sua equipe e a determinação de continuar crescendo no esporte. Seu estilo combina agressividade, adaptação e inteligência de luta, características que fazem dele um atleta perigoso e preparado para grandes desafios.',
-    avatar: 'assets/img/fighters/atleta-03-cover.jpg', portrait: 'assets/img/fighters/atleta-03-portrait.jpg',
-    gallery: ['assets/img/fighters/atleta-03-gallery-01.jpg', 'assets/img/fighters/atleta-03-gallery-02.jpg', 'assets/img/fighters/atleta-03-gallery-03.jpg'],
+    story: 'Com um cartel de 7 vitórias e 9 derrotas, Lucas demonstra experiência, resistência e evolução constante na modalidade. Um dos seus grandes diferenciais é lutar com as duas bases, podendo atuar tanto como destro quanto canhoto, o que torna seu jogo imprevisível e estratégico durante os combates.Representando a força do Pará no MMA, Lucas carrega no cage a disciplina do treinamento, a garra da sua equipe e a determinação de continuar crescendo no esporte. Seu estilo combina agressividade, adaptação e inteligência de luta, características que fazem dele um atleta perigoso e preparado para grandes desafios.',
+    avatar: 'assets/img/fighters/atleta-08-cover.jpg', portrait: 'assets/img/fighters/atleta-08-portrait.jpg',
+    gallery: ['assets/img/fighters/atleta-08-gallery-01.jpg', 'assets/img/fighters/atleta-08-gallery-02.jpg', 'assets/img/fighters/atleta-08-gallery-03.jpg'],
     videos: [
-      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-03-highlight.mp4', poster: 'assets/img/fighters/atleta-03-video-poster.jpg', description: 'Raspagens, finalizações, passagens e conquistas no tatame.' },
-      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-03-training.mp4', poster: 'assets/img/fighters/atleta-03-training-poster.jpg', description: 'Rotina no tatame, rolas, preparação técnica e bastidores.' }
+      { title: 'Highlight do atleta', src: 'assets/videos/fighters/atleta-08-highlight.mp4', poster: 'assets/img/fighters/atleta-08-video-poster.jpg', description: 'Raspagens, finalizações, passagens e conquistas no tatame.' },
+      { title: 'Treino e bastidores', src: 'assets/videos/fighters/atleta-08-training.mp4', poster: 'assets/img/fighters/atleta-08-training-poster.jpg', description: 'Rotina no tatame, rolas, preparação técnica e bastidores.' }
     ]
   },
   
